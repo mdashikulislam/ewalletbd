@@ -1,0 +1,21 @@
+.error-page .title .inner{
+	background: #5fba34;
+	border: 5px solid #5fba34;
+}
+.error-page .content h2{
+	color: #5fba34;
+}
+.error-page .content .button a{
+	background: #5fba34;
+	border: 1px solid #5fba34;
+}
+.error-page .content .button a:hover{
+	color: #5fba34;
+    border-color: #5fba34;
+}
+.event-col .event .event-body .text:hover h2{
+    color:#5fba34;
+}
+#color-style-switcher{
+	display: none;
+}
