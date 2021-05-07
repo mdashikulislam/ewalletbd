@@ -4,7 +4,7 @@
  * Version:     1.0
  * Author:      ErrorThemes
  * URL:         https://themeforest.net/user/errorthemes
- * 
+ *
  */
 
 /* Table of contents
@@ -17,7 +17,7 @@
 6. Sticky Header
 7. DropDown Menu
 8. Slider
-9. Course Search 
+9. Course Search
 10. Welcome Col
 11. Column Box
 12. Featured Box
@@ -42,9 +42,9 @@
 31. Footer main
 32. Footer Bottom
 33. Scroll To ToP
-34. 
-35. 
-36. 
+34.
+35.
+36.
 
 
 =================================================
@@ -81,7 +81,8 @@ html a {
     -ms-text-size-adjust: 100%;
 }
 body {
-    font-family: 'Roboto', sans-serif;
+
+    font-family: 'Raleway',sans-serif;
     font-size: 16px;
     color: #2a2a2a;
     /*overflow: hidden;*/
@@ -92,14 +93,14 @@ body {
 }
 p {
     color: #2a2a2a;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway',sans-serif;
     font-weight: 500;
     font-size: 16px;
 }
 a {
     text-decoration: none !important;
     cursor: pointer;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway',sans-serif;
 }
 a:link,
 a:visited {
@@ -118,7 +119,7 @@ input,
 button,
 select,
 textarea {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway',sans-serif;
 }
 h1,
 h2,
@@ -128,7 +129,7 @@ h5,
 h6 {
     margin-top: 0;
     color: #353535;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway',sans-serif;
 }
 ul{
 	margin: 0;
@@ -137,7 +138,7 @@ ul li{
 	list-style-type: none!important;
 }
 ul li a{
-	font-family: 'PT Sans', sans-serif!important;	
+    font-family: 'Raleway',sans-serif;
 }
 
 .bg{
@@ -215,7 +216,7 @@ Header Top
 	-moz-transition: ease .4s all;
 	-ms-transition: ease .4s all;
 	-o-transition: ease .4s all;
-	transition: ease .4s all;	
+	transition: ease .4s all;
 }
 
 .header-top-col .login-signup ul{
@@ -225,7 +226,7 @@ Header Top
 	float: left;
 	margin-right: 30px;
 	padding-top: 4px;
-    
+
 }
 .header-top-col .login-signup ul li a{
 	color: #fff;
@@ -362,7 +363,7 @@ DropDown Menu Css
 .logo-nav-col .sf-menu ul {
     box-shadow: none;
     border-top: 0;
-    float: right; 
+    float: right;
 }
 .logo-nav-col .sf-menu a {
     padding-top: 0;
@@ -436,7 +437,7 @@ DropDown Menu Css
     padding-left: 25px;
 }
 .logo-nav-col .sf-menu li a {
-    font-family: 'PT Sans', sans-serif!important;
+    font-family: 'Raleway',sans-serif;
     text-transform: uppercase;
     color: #fff;
     border: 0;
@@ -468,7 +469,7 @@ DropDown Menu Css
     text-transform: uppercase;
 }
 .logo-nav-col .sf-menu > li > a {
-    font-family: 'PT Sans', sans-serif!important;
+    font-family: 'Raleway',sans-serif;
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
@@ -681,7 +682,7 @@ Slider
 }
 /*
 ========================
-Course Search 
+Course Search
 ========================
  */
 .search-col{
@@ -746,7 +747,7 @@ Course Search
     font-size: 16px;
     color: #323f52;
     border-left:1px solid #ddd;
-    
+
 }
 .search-col .search-box .search-feild input[type="text"]:focus{
    color:#323f52;
@@ -1010,7 +1011,7 @@ Popular Course
     top: 1px;
     width:100px;
     height: 1px;
-    background: #ddd;    
+    background: #ddd;
 }
 .popular-course-col .popular-course .border{
     width: 30px;
@@ -1086,7 +1087,7 @@ Popular Course
 }
 /*
 ==================
-Counter 
+Counter
 ==================
 */
 .counter-col{
@@ -1382,7 +1383,7 @@ Home Faq
 }
 .home-faq-col .home-faq  .panel-default>.panel-heading,
 .panel{
-  background-color: #e6e6e6; 
+  background-color: #e6e6e6;
   border:0 none;
   box-shadow:none;
 }
@@ -1562,7 +1563,7 @@ Blog
 }
 .blog-col .blog .body .posted ul li i span{
     margin-left: 10px;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway',sans-serif;
 }
 .blog-col .blog .body .title{
     padding:0px 20px;
@@ -1651,7 +1652,7 @@ Blog
     color:#fff;
     border-radius: 0;
     font-weight: 700;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway',sans-serif;
 }
 .blog-col .blog-right .tab-panel ul li.active a{
     background: #fff;
@@ -1738,7 +1739,7 @@ Blog
     margin-right: 10px;
     text-transform: capitalize;
     color:#717171;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway',sans-serif;
     -webkit-transition: ease .3s all;
     -o-transition: ease .3s all;
     transition: ease .3s all;
@@ -1781,7 +1782,7 @@ Blog Single
 .blog-col .blog-single .blog-single-body .list ul li{
     float: left;
     margin-right: 15px;
-   font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway',sans-serif;
    font-size: 16px;
    color:#000;
 }
@@ -1971,7 +1972,7 @@ Online Course
     background: url(../img/online-bg.jpg);
     background-repeat: no-repeat;
     background-position: center center;
-    -webkit-background-size: cover; 
+    -webkit-background-size: cover;
     background-size: cover;
     position: relative;
     padding-top: 30px;
@@ -2010,7 +2011,7 @@ Online Course
     padding-top: 60px;
 }
 .online-col .time-start .simply-countdown-losange{
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway',sans-serif;
     font-size: 22px;
 }
 .online-col .register-form{
@@ -2488,7 +2489,7 @@ Banner
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6); 
+    background: rgba(0,0,0,0.6);
 }
 .banner-col .banner{
     text-align: center;
@@ -2515,7 +2516,7 @@ Banner
     position: relative;
 }
 .error-page .title .inner {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway',sans-serif;
     width: 200px;
     height: 200px;
     color: #fff;
@@ -2545,7 +2546,7 @@ Banner
     text-align: center;
 }
 .error-page .content h2 {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Raleway',sans-serif;
     font-size: 24px;
     padding-bottom: 15px;
     font-weight: 700;
@@ -2659,7 +2660,7 @@ Contact Us
     transition: all 1s ease;
     background: transparent;
     padding: 5px 25px;
-    
+
 }
 .contact-col .input-feild .input button:after{
     content: "";
@@ -2804,7 +2805,7 @@ Under Constraction
     -ms-transition: ease .3s all;
     -o-transition: ease .3s all;
     transition: ease .3s all;
-    
+
 }
 .under-construction .input button:hover{
     border: 1px solid #fff;

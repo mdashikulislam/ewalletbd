@@ -6,10 +6,11 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="description" content="Education Pro - University, Collage & School Responsive Html5 Templet">
     <meta name="author" content="ErrorThemes">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--Title-->
     <title>E-wallet</title>
     <!--Favicon Icon-->
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{asset('frontend/img/favicon.ico')}}" />
     <!--StyleSheet-->
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap-theme.min.css')}}">
@@ -29,6 +30,10 @@
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/colors/default.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/toaster/toastr.css')}}">
+
+{{--    <link rel="preconnect" href="https://fonts.gstatic.com">--}}
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -43,6 +48,9 @@
             padding:  20px;
             border-radius: 10px;
             border: 1px solid #ff4b00;
+        }
+        .gCdMUP{
+            display: none;
         }
         .reserve-col .reserve .media-body h4{
             /*color: #fff;*/
@@ -199,6 +207,12 @@
         .logo-nav-col .login-signup ul li{
             float: left;
         }
+        .logo-nav-col.sticky .sf-menu li:last-child a{
+            padding: 5px 15px;
+        }
+        .logo-nav-col.sticky .sf-menu li:nth-last-child(2) a{
+            padding: 5px 15px;
+        }
         .logo-nav-col .login-signup ul li a{
             font-family: 'PT Sans', sans-serif!important;
             font-weight: 600;
@@ -207,6 +221,38 @@
             color: #ff4b00;
             line-height: 30px;
             padding: 10px 19px;
+        }
+        .nav-bar ul li:last-child a{
+            background: red;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin-top: 3px;
+        }
+        .nav-bar ul li a{
+            font-weight: bold!important;
+        }
+        .nav-bar ul li:last-child a:hover{
+            color: #fff;
+        }
+        .nav-bar ul li:nth-last-child(2) a{
+            background: red;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin-top: 3px;
+            margin-right: 10px;
+        }
+        .nav-bar ul li:nth-last-child(2)  a:hover{
+            color: #fff;
+        }
+        .is-invalid{
+            border:1px solid red;
+        }
+        .invalid-feedback{
+            color: red;
+            margin-top: 10px;
+            display: block;
         }
     </style>
 </head>
@@ -221,7 +267,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <a href="index.html">
+                    <a href="{{route('user.home')}}">
                         <div class="logo">
                             <img src="{{asset('frontend/img/logo.png')}}" alt="">
                         </div>
@@ -248,7 +294,7 @@
     <div class="header-top-col">
         <div class="container">
             <div class="row">
-                <marquee><span style="color: #fff;"><span style="color: yellow;font-weight: bold;">Notice : </span> আমাদের কাছে আপনি Astropay Card paben । বিকাশ, রকেট, নগত থেকে টাকা পাঠালে ২% খরচ দিতে হবে। প্রয়োজনে কথা বলুনঃ-  What's App অথবা Live chart</span> </marquee>
+                <marquee><span style="color: #fff;font-size: 22px;"><span style="color: yellow;font-weight: bold;">Notice : </span> আমাদের কাছে আপনি Astropay Card paben । বিকাশ, রকেট, নগত থেকে টাকা পাঠালে ২% খরচ দিতে হবে। প্রয়োজনে কথা বলুনঃ-  What's App অথবা Live chart</span> </marquee>
             </div>
         </div>
     </div>
@@ -327,9 +373,9 @@
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="input">
-                        <form action="#" method="post">
-                            <input type="email" class="form-control" placeholder="Enter Your Email." required="required">
-                            <button class="btn btn-success"><span>Subscribe!</span></button>
+                        <form action="{{route('newslatter')}}" method="post">
+                            <input  name="email" type="email" class="form-control news_email" placeholder="Enter Your Email." required="required">
+                            <button class="btn btn-success news_btn"><span>Subscribe!</span></button>
                         </form>
                     </div>
                 </div>
@@ -446,6 +492,14 @@
     <!--Scroll To Top End-->
 </div>
 <!--JavaScript-->
+
+<!-- GetButton.io widget -->
+
+<!-- /GetButton.io widget -->
+
+
+
+
 <script src="{{asset('frontend/js/jquery-2.2.4.min.js')}}"></script>
 <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
@@ -457,8 +511,74 @@
 <script src="{{asset('frontend/js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('frontend/js/simplyCountdown.min.js')}}"></script>
 <script src="{{asset('frontend/js/jquery.slicknav.js')}}"></script>
+<script src="{{asset('frontend/toaster/toastr.min.js')}}"></script>
 {{--<script src="{{asset('frontend/js/color-switcher.js')}}"></script>--}}
 <script src="{{asset('frontend/js/custom.js')}}"></script>
 <script src="{{asset('frontend/js/user.custom.js')}}"></script>
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "01521458894", // WhatsApp number
+            call_to_action: "Message us", // Call to action
+            position: "left", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+
+    })();
+</script>
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "30000",
+        "hideDuration": "100000",
+        "timeOut": "500000",
+        "extendedTimeOut": "100000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+
+    $(document).ready(function (){
+        $(document).on('click','.news_btn',function (event){
+            event.preventDefault();
+            var email = $('.news_email').val();
+            $.ajax({
+                url:'{{route('newslatter')}}',
+                method:'POST',
+                data:{'email':email,'_token':'{{csrf_token()}}'},
+                success:function (response){
+                    $('.news_email').val('');
+                    toastr.info(response.msg);
+
+                },
+                error:function (error){
+                    toastr.error(error.responseJSON.errors.email)
+                }
+
+            });
+        });
+    });
+
+</script>
+
+<style>
+    .sc-7dvmpp-1{
+        display: none!important;
+    }
+    #toast-container{
+        margin-top: 50px;
+    }
+</style>
+
 </body>
 </html>

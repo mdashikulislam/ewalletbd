@@ -20,7 +20,8 @@ Route::namespace('Frontend')->group(function (){
     Route::get('/about','HomeController@about')->name('user.about');
     Route::get('/faq','HomeController@faq')->name('user.faq');
     Route::get('/contact','HomeController@contact')->name('user.contact');
-
+    Route::post('/contact/message','HomeController@contactSend')->name('user.contact.send');
+    Route::post('/newslatter','HomeController@newslatter')->name('newslatter');
 //    Route::post('user-validation','HomeController@validUser')->name('user.valid');
 //    Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');
 });
