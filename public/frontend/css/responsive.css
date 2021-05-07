@@ -1,0 +1,181 @@
+@media only screen and (max-width: 991px) {
+	.search-col .text{
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	#menu {
+        display: none;
+    }
+    .logo-nav-col .nav-wrapper{
+    	display: none;
+    }
+    .logo-nav-col .logo {
+        float: none;
+        text-align: center;
+    }
+    .logo-nav-col .img{
+    	float: none;
+    	text-align: center;
+    }
+    .slicknav_menu {
+        display: block;
+    }
+    .slicknav_menu li a {
+        text-decoration: none;
+    }
+    .logo-nav-col.sticky {
+        display: none;
+    }
+    .logo-nav-col .sf-menu{
+    	display: none;
+    }
+    .online-col .time-start .text{
+    	text-align: center;
+    }
+    .online-col .time-start .count{
+    	text-align: center;
+    	padding-top: 30px;
+    }
+    .online-col .time-start .simply-countdown-losange{
+    	display: inline-block;
+    }
+    .gullery-col .gullery .simplefilter li{
+    	margin: 0;
+    	display: block;
+    	margin-top: 10px;
+    }
+    .newsletter .text h2{
+		text-align: center;
+		margin: 0;
+		margin-bottom: 30px;
+	}
+	.blog-col .search input[type="text"]{
+		width: calc(100% - 52px);
+	}
+}
+@media only screen and (min-width: 991px) and (max-width: 1199px){
+	.blog-col .blog .body .posted ul li{
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	.simply-countdown-losange > .simply-section{
+		width: 70px;
+		height: 70px;
+	}
+	.simply-countdown-losange > .simply-section > div{
+		font-size: 16px;
+	}
+	.newsletter .input input[type="email"]{
+		width: 58%;
+	}
+}
+@media screen and (max-width: 510px){
+	.newsletter .text h2{
+		font-size: 24px;
+	}
+	.newsletter .input input[type="email"]{
+		width: 100%;
+		margin-bottom: 30px;
+		display: block;
+	}
+	.newsletter .input{
+		text-align: center;
+		
+	}
+	.under-construction .input input[type="text"]{
+		width: 68%;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	.footer-bottom-col .footer-menu ul li{
+		margin-right: 10px!important;
+	}
+}
+@media only screen and (max-width: 768px){
+	.header-top-col .header-social{
+		text-align: center;
+	}
+	.header-top-col .header-social ul{
+		display: inline-block;
+	}
+	.header-top-col .login-signup{
+		text-align: center;
+	}
+	.header-top-col .login-signup ul{
+		display: inline-block;
+		float: none;
+	}
+	.online-col .time-start .count{
+		display: none;
+	}
+	.footer-bottom-col .footer-menu{
+		text-align: center;
+	}
+	.footer-bottom-col .footer-menu ul{
+		display: inline-block;
+		float: none;
+	}
+	.footer-bottom-col .copy-right{
+		float: none;
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 550px){
+	.success-col .success-bar .title h2{
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-width: 700px){
+	.search-col .search-box .combo-box{
+		float: none;
+		margin-bottom: 20px;
+	}
+	.search-col .search-box .combo-box select{
+		width: 100%;
+	}
+	.search-col .search-box .search-feild input[type="text"]{
+		width: calc(100% - 60px);
+	}
+	.blog-single .write-comment .top input[type="text"]{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.blog-single .write-comment .top input[type="email"]{
+		width: 100%;
+	}
+}
+@media screen and (min-width: 992px) {
+    .slicknav_menu {
+        display: none;
+    }
+    #menu {
+        display: block;
+    }
+}
+@media screen and (max-width: 480px){
+	.banner-col .banner{
+		padding: 0px 0px;
+	}
+	.banner-col .banner h2{
+		font-size: 28px;
+	}
+	.blog-col .blog-single .blog-single-body .list ul li.block{
+		display: none;
+	}
+	
+}
+@media screen and (min-width: 650px) and (max-width:991px){
+	.banner-col .banner{
+		padding: 0px 100px;
+	}
+	.banner-col .banner h2{
+		font-size: 30px;
+	}
+}
+@media screen and (min-width: 481px) and (max-width:649px){
+	.banner-col .banner{
+		padding: 0px 0px;
+	}
+}
