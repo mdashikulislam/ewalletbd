@@ -15,13 +15,13 @@
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Frontend')->group(function (){
-    Route::get('/','HomeController@index')->name('user.home');
-    Route::get('history','HomeController@history')->name('user.history');
-    Route::get('/about','HomeController@about')->name('user.about');
-    Route::get('/faq','HomeController@faq')->name('user.faq');
-    Route::get('/contact','HomeController@contact')->name('user.contact');
-    Route::post('/contact/message','HomeController@contactSend')->name('user.contact.send');
-    Route::post('/newslatter','HomeController@newslatter')->name('newslatter');
+    Route::get('/','HomeController@index')->name('user.home')->middleware('auth:web');
+    Route::get('history','HomeController@history')->name('user.history')->middleware('auth:web');
+    Route::get('/about','HomeController@about')->name('user.about')->middleware('auth:web');
+    Route::get('/faq','HomeController@faq')->name('user.faq')->middleware('auth:web');
+    Route::get('/contact','HomeController@contact')->name('user.contact')->middleware('auth:web');
+    Route::post('/contact/message','HomeController@contactSend')->name('user.contact.send')->middleware('auth:web');
+    Route::post('/newslatter','HomeController@newslatter')->name('newslatter')->middleware('auth:web');
 //    Route::post('user-validation','HomeController@validUser')->name('user.valid');
 //    Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');
 });

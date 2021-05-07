@@ -301,7 +301,8 @@
 
     @section('content')
     @show
-
+    @guest
+    @else
     <div class="partner-col">
         <div class="container">
             <div class="row">
@@ -382,6 +383,8 @@
             </div>
         </div>
     </div>
+    @endguest
+
     <!--Newsletter End-->
     <!--Footer main Start-->
     <div class="footer-main">
@@ -559,7 +562,6 @@
                 success:function (response){
                     $('.news_email').val('');
                     toastr.info(response.msg);
-
                 },
                 error:function (error){
                     toastr.error(error.responseJSON.errors.email)
