@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/colors/default.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/toaster/toastr.css')}}">
-
+    @yield('css')
 {{--    <link rel="preconnect" href="https://fonts.gstatic.com">--}}
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
 
@@ -504,6 +504,7 @@
 
 
 <script src="{{asset('frontend/js/jquery-2.2.4.min.js')}}"></script>
+@stack('js')
 <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
 <script src="{{asset('frontend/js/superfish.js')}}"></script>
@@ -517,7 +518,8 @@
 <script src="{{asset('frontend/toaster/toastr.min.js')}}"></script>
 {{--<script src="{{asset('frontend/js/color-switcher.js')}}"></script>--}}
 <script src="{{asset('frontend/js/custom.js')}}"></script>
-<script src="{{asset('frontend/js/user.custom.js')}}"></script>
+
+
 <script type="text/javascript">
     (function () {
         var options = {
@@ -570,6 +572,7 @@
             });
         });
     });
+
 
 </script>
 

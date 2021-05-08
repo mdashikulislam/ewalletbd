@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Helpers\Helper;
 use App\Model\Admin\Activity;
 use App\Model\Admin\ActivityPanel;
 use App\Model\Admin\ActivityPost;
@@ -29,13 +30,19 @@ use App\User;
 use Carbon\Carbon;
 use http\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use function React\Promise\all;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        if (Helper::checkProfileStatus()){
+            return Helper::checkProfileStatus();
+        }
+
         return view('frontend.index');
+
     }
 
     public function history()
@@ -87,5 +94,13 @@ class HomeController extends Controller
         return response()->json([
             'msg'=>'Thanks for subscription'
         ]);
+    }
+
+    public function otpVerification()
+    {
+        echo phpinfo();
+        $otpNumber = \Auth::user()->phone;
+        return view('frontend.otp')
+            ->with(['phone'=>$otpNumber]);
     }
 }

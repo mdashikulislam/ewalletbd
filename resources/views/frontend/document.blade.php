@@ -12,14 +12,13 @@
                 <div class="col-md-8 col-md-offset-2">
                     <div class="thumbnail" style="margin-top: 30px;">
                         <div class="card-body">
-
                             <form action="{{route('register')}}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">First Name</label>
                                     <input type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror"  placeholder="First Name" value="{{old('first_name')}}">
                                     @error('first_name')
-                                        <span class="invalid-feedback">{{$message}}</span>
+                                    <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
@@ -33,7 +32,7 @@
                                     <label for="exampleInputEmail1">Address</label>
                                     <textarea name="address" col="5"  value="{{old('address')}}" placeholder="Address" class="form-control @error('address') is-invalid @enderror" style="height: 80px!important;"></textarea>
                                     @error('address')
-                                        <span class="invalid-feedback">{{$message}}</span>
+                                    <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
@@ -135,14 +134,3 @@
         }
     </style>
 @endsection
-@push('js')
-    <script>
-        function isNumberKey(evt)
-        {
-            var charCode = (evt.which) ? evt.which : event.keyCode
-            if (charCode > 31 && (charCode < 48 || charCode > 57))
-                return false;
-            return true;
-        }
-    </script>
-@endpush

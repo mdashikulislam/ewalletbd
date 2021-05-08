@@ -22,6 +22,11 @@ Route::namespace('Frontend')->group(function (){
     Route::get('/contact','HomeController@contact')->name('user.contact')->middleware('auth:web');
     Route::post('/contact/message','HomeController@contactSend')->name('user.contact.send')->middleware('auth:web');
     Route::post('/newslatter','HomeController@newslatter')->name('newslatter')->middleware('auth:web');
+    Route::get('/otp/verification','HomeController@otpVerification')->name('user.otp')->middleware('auth:web');
+    Route::get('/send/otp','AjaxController@sendOtp')->name('send.otp');
+    Route::get('/document/verification','HomeController@documentVerification')->name('user.document.verification');
+    Route::get('/otp/verify/{otp}','AjaxController@verify')->name('otp.verify');
+
 //    Route::post('user-validation','HomeController@validUser')->name('user.valid');
 //    Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');
 });
