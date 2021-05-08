@@ -16,8 +16,8 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="">Phone</label>
-                                    <input name="email"  type="email"   class="form-control  @error('email') is-invalid @enderror"  value="{{old('phone')}}" placeholder="01xxxxxxxxx">
-                                    @error('email')
+                                    <input maxlength="11" onkeypress="return isNumberKey(event)" name="phone"  type="text"   class="form-control  @error('phone') is-invalid @enderror"  value="{{old('phone')}}" placeholder="01xxxxxxxxx">
+                                    @error('phone')
                                     <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
