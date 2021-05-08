@@ -282,9 +282,15 @@
                             <li><a href="{{route('user.about')}}">About</a></li>
                             <li><a href="{{route('user.faq')}}">FAQ</a></li>
                             <li><a href="{{route('user.contact')}}">Contact</a></li>
+                            @guest
                             <li><a href="{{route('login')}}"><i class="fa fa-user-o fa-fw"></i><span>LogIn</span></a></li>
                             <li><a href="{{route('register')}}"><i class="fa fa fa-lock fa-fw"></i><span>Register</span></a></li>
+                            @else
+                                <li><a href="{{route('login')}}"><i class="fa fa-user-o fa-fw"></i><span>Profile</span></a></li>
+                                <li><a id="btn-logout" href="javascript:void(0)"><i class="fa fa-sign-out fa-fw"></i><span>Logout</span></a></li>
+                            @endguest
                         </ul>
+                        <form id="logout" action="{{route('logout')}}" method="POST" style="display: none">@csrf</form>
                     </div>
                     <!-- Nav End -->
                 </div>
@@ -501,7 +507,7 @@
 <!-- /GetButton.io widget -->
 
 
-
+@include('sweetalert::alert')
 
 <script src="{{asset('frontend/js/jquery-2.2.4.min.js')}}"></script>
 @stack('js')
@@ -570,6 +576,9 @@
                 }
 
             });
+        });
+        $('#btn-logout').on('click',function (){
+            $('#logout').submit();
         });
     });
 

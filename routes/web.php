@@ -25,6 +25,7 @@ Route::namespace('Frontend')->group(function (){
     Route::get('/otp/verification','HomeController@otpVerification')->name('user.otp')->middleware('auth:web');
     Route::get('/send/otp','AjaxController@sendOtp')->name('send.otp');
     Route::get('/document/verification','HomeController@documentVerification')->name('user.document.verification');
+    Route::post('/document/store','HomeController@documentStore')->name('user.document.store');
     Route::get('/otp/verify/{otp}','AjaxController@verify')->name('otp.verify');
 
 //    Route::post('user-validation','HomeController@validUser')->name('user.valid');

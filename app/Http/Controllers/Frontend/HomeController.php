@@ -4,24 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\Helper;
-use App\Model\Admin\Activity;
-use App\Model\Admin\ActivityPanel;
-use App\Model\Admin\ActivityPost;
+
 use App\Model\Admin\Admin;
-use App\Model\Admin\Blog;
-use App\Model\Admin\BlogCategory;
-use App\Model\Admin\Event;
-use App\Model\Admin\News;
-use App\Model\Admin\Partner;
-use App\Model\Admin\PhotoGallery;
-use App\Model\Admin\PhotoGalleryYear;
-use App\Model\Admin\Skill;
-use App\Model\Admin\Slider;
-use App\Model\Admin\SuccessStory;
-use App\Model\Admin\Team;
-use App\Model\Admin\TeamPanelName;
-use App\Model\Admin\Tips;
-use App\Model\Admin\Video;
+
 use App\Model\Frontend\Contact;
 use App\Model\Frontend\ContactUs;
 use App\Model\Frontend\Upload;
@@ -47,24 +32,39 @@ class HomeController extends Controller
 
     public function history()
     {
+        if (Helper::checkProfileStatus()){
+            return Helper::checkProfileStatus();
+        }
         return view('frontend.history');
     }
 
     public function about()
     {
+        if (Helper::checkProfileStatus()){
+            return Helper::checkProfileStatus();
+        }
         return view('frontend.about');
     }
     public function faq()
     {
+        if (Helper::checkProfileStatus()){
+            return Helper::checkProfileStatus();
+        }
         return view('frontend.faq');
     }
     public function contact()
     {
+        if (Helper::checkProfileStatus()){
+            return Helper::checkProfileStatus();
+        }
         return view('frontend.contact');
     }
 
     public function contactSend(Request $request)
     {
+        if (Helper::checkProfileStatus()){
+            return Helper::checkProfileStatus();
+        }
         $this->validate($request,[
             'name'=>['required'],
             'email'=>['required','email','max:50'],
@@ -98,9 +98,58 @@ class HomeController extends Controller
 
     public function otpVerification()
     {
-        echo phpinfo();
+        if (Helper::checkOtpIsVerified()){
+
+            return Helper::checkOtpIsVerified();
+        }
         $otpNumber = \Auth::user()->phone;
         return view('frontend.otp')
             ->with(['phone'=>$otpNumber]);
+    }
+    public function documentVerification()
+    {
+        if (Helper::checkDocumentIsVerified()){
+            return Helper::checkDocumentIsVerified();
+        }
+        return view('frontend.document');
+    }
+
+    public function documentStore(Request $request)
+    {
+        $this->validate($request,[
+            'nid_front'=>['max:2048'],
+            'nid_back'=>['max:2048'],
+            'driving'=>['max:2048'],
+            'passport'=>['max:2048'],
+            'utility'=>['max:2048'],
+            'bank'=>['max:2048'],
+            'image'=>['max:2048']
+        ]);
+
+        $user = User::where('id',Auth::id())->first();
+        $user->id_type = $request->id_type;
+        if ($request->id_type == 'nid'){
+            $user->nid_front =Helper::uploadSingleImage($request->nid_front,'nid_front','nf');
+            $user->nid_back = Helper::uploadSingleImage($request->nid_back,'nid_back','nb');
+        }else if ($request->id_type == 'driving'){
+            $user->driving = Helper::uploadSingleImage($request->driving,'driving','dr');
+        }else{
+            $user->passport = Helper::uploadSingleImage($request->passport,'passport','pp');
+        }
+        $user->document_type = $request->document_type;
+        if ($request->document_type == 'utility'){
+            $user->utility = Helper::uploadSingleImage($request->utility,'utility','ut');
+        }else{
+            $user->bank = Helper::uploadSingleImage($request->bank,'bank','bn');
+        }
+        $user->image = Helper::uploadSingleImage($request->image,'image','img');
+        if ($user->save()){
+            $user->is_document_verified = 'verified';
+            $user->save();
+            \Alert::success('Document Upload Successfully');
+        }else{
+            \Alert::error('Document Upload not Successfully');
+        }
+        return redirect()->route('user.home');
     }
 }

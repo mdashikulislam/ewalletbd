@@ -15,13 +15,6 @@
                             <form action="{{route('login')}}" method="POST">
                                 @csrf
 
-{{--                                <div class="form-group">--}}
-{{--                                    <label for="exampleInputEmail1">Phone</label>--}}
-{{--                                    <input name="phone" maxlength="11" onkeypress=" return isNumberKey(event)" type="text"   class="form-control  number @error('phone') is-invalid @enderror"  value="{{old('phone')}}" placeholder="01xxxxxxxxx">--}}
-{{--                                    @error('phone')--}}
-{{--                                    <span class="invalid-feedback">{{$message}}</span>--}}
-{{--                                    @enderror--}}
-{{--                                </div>--}}
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email</label>
                                     <input name="email" type="email" class="form-control @error('email') is-invalid @enderror"  value="{{old('email')}}" placeholder="example@gmail.com">

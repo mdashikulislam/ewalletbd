@@ -5,74 +5,65 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading-col">
-                        <h2>Registration</h2>
+                        <h2>Documents Verification</h2>
                         <div class="border"></div>
                     </div>
                 </div>
                 <div class="col-md-8 col-md-offset-2">
                     <div class="thumbnail" style="margin-top: 30px;">
                         <div class="card-body">
-                            <form action="{{route('register')}}" method="POST">
+                            <form action="{{route('user.document.store')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">First Name</label>
-                                    <input type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror"  placeholder="First Name" value="{{old('first_name')}}">
-                                    @error('first_name')
+                                    <label>Identity Type</label>
+                                    <select  name="id_type" id="id_type" class="form-control @error('id_type') is-invalid @enderror">
+                                        <option {{old('id_type') == 'nid' ? 'selected':''}} value="nid">NID</option>
+                                        <option {{old('id_type') == 'passport' ? 'selected':''}} value="passport">Passport</option>
+                                        <option {{old('id_type') == 'driving' ? 'selected':''}} value="driving">Driving License</option>
+                                    </select>
+                                    @error('id_type')
                                     <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
+                                <div id="id_group">
+                                    <div class="nid">
+
+                                    </div>
+                                    <div class="driving" >
+
+                                    </div>
+                                    <div class="passport">
+
+                                    </div>
+                                </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Last Name</label>
-                                    <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror"  value="{{old('last_name')}}" placeholder="Last Name">
-                                    @error('last_name')
+                                    <label>Document Type</label>
+                                    <select  name="document_type" id="document_type" class="form-control @error('document_type') is-invalid @enderror">
+                                        <option {{old('document_type') == 'utility' ? 'selected':''}} value="utility">Utility Bill</option>
+                                        <option {{old('document_type') == 'bank' ? 'selected':''}} value="bank">Bank Statement</option>
+                                    </select>
+                                    @error('document_type')
                                     <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Address</label>
-                                    <textarea name="address" col="5"  value="{{old('address')}}" placeholder="Address" class="form-control @error('address') is-invalid @enderror" style="height: 80px!important;"></textarea>
-                                    @error('address')
-                                    <span class="invalid-feedback">{{$message}}</span>
-                                    @enderror
+                                <div id="document_group">
+                                    <div class="utility">
+
+                                    </div>
+                                    <div class="bank" >
+
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">City</label>
-                                    <input name="city"  type="text" class="form-control @error('city') is-invalid @enderror"  value="{{old('city')}}" placeholder="City">
-                                    @error('city')
-                                    <span class="invalid-feedback">{{$message}}</span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Date of Birth</label>
-                                    <input name="dob" type="date" class="form-control @error('dob') is-invalid @enderror"  value="{{old('dob')}}" placeholder="Date of Birth">
-                                    @error('dob')
-                                    <span class="invalid-feedback">{{$message}}</span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Phone</label>
-                                    <input name="phone" maxlength="11" onkeypress=" return isNumberKey(event)" type="text"   class="form-control  number @error('phone') is-invalid @enderror"  value="{{old('phone')}}" placeholder="01xxxxxxxxx">
-                                    @error('phone')
-                                    <span class="invalid-feedback">{{$message}}</span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email</label>
-                                    <input name="email" type="email" class="form-control @error('email') is-invalid @enderror"  value="{{old('email')}}" placeholder="example@gmail.com">
-                                    @error('email')
-                                    <span class="invalid-feedback">{{$message}}</span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Password</label>
-                                    <input name="password" type="password" class="form-control @error('password') is-invalid @enderror"  placeholder="">
-                                    @error('password')
+                                    <label>Selfi with photo ID</label>
+                                    <input name="image" type="file" class="form-control @error('image') is-invalid @enderror" required="required">
+                                    @error('image')
                                     <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <div class="submit-btn">
-                                        <button class="btn-submit">Register</button>
+                                        <button type="submit" class="btn-submit">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -101,6 +92,8 @@
         }
         .register-col .thumbnail .form-control:focus{
             border-color: #ff4b00;
+            outline: none;
+            box-shadow: none;
         }
 
 
@@ -134,3 +127,87 @@
         }
     </style>
 @endsection
+@push('js')
+    <script>
+        $(window).on('load',function (){
+            idTypeChange($('#id_type').val());
+            documentTypeChange($('#document_type').val());
+        })
+        $(document).ready(function (){
+            $(document).on('change','#id_type',function (){
+                var type = $(this).val();
+                idTypeChange(type);
+            });
+            $(document).on('change','#document_type',function (){
+                var documentType = $(this).val();
+                documentTypeChange(documentType);
+            });
+        });
+        function idTypeChange(value){
+            var idGroup = $('#id_group');
+            if (value == 'nid'){
+                idGroup.find('div.nid').append(`<div class="form-group">
+                                            <label>NID Front Side</label>
+                                            <input name="nid_front" type="file" class="form-control @error('nid_front') is-invalid @enderror" required="required">
+                                            @error('nid_front')
+                <span class="invalid-feedback">{{$message}}</span>
+                                            @enderror
+                </div>
+                <div class="form-group">
+                    <label>NID Back Side</label>
+                    <input name="nid_back" type="file" class="form-control @error('nid_back') is-invalid @enderror" required="required">
+                                            @error('nid_back')
+                <span class="invalid-feedback">{{$message}}</span>
+                                            @enderror
+                </div>`);
+
+                idGroup.find('div.passport').empty();
+                idGroup.find('div.driving').empty();
+            }else if(value == 'passport'){
+                idGroup.find('div.nid').empty();
+                idGroup.find('div.passport').append(`<div class="form-group">
+                                            <label>Passport</label>
+                                            <input name="passport" type="file" class="form-control @error('passport') is-invalid @enderror" required="required">
+                                            @error('passport')
+                <span class="invalid-feedback">{{$message}}</span>
+                                            @enderror
+                </div>`);
+                idGroup.find('div.driving').empty();
+            }else{
+                idGroup.find('div.nid').empty();
+                idGroup.find('div.passport').empty();
+                idGroup.find('div.driving').append(`<div class="form-group">
+                                            <label>Driving Licence</label>
+                                            <input name="driving" type="file" class="form-control @error('driving') is-invalid @enderror" required="required">
+                                            @error('driving')
+                <span class="invalid-feedback">{{$message}}</span>
+                                            @enderror
+                </div>`);
+            }
+        }
+        function documentTypeChange(value){
+            var documentGroup = $('#document_group');
+            if (value == 'bank'){
+                documentGroup.find('div.bank').append(`<div class="form-group">
+                                            <label>Bank Statement</label>
+                                            <input name="bank" type="file" class="form-control @error('bank') is-invalid @enderror" required="required">
+                                            @error('bank')
+                <span class="invalid-feedback">{{$message}}</span>
+                                            @enderror
+                </div>`);
+                documentGroup.find('div.utility').empty();
+            }else{
+                documentGroup.find('div.utility').append(`<div class="form-group">
+                                            <label>Utility Bill</label>
+                                            <input name="utility" type="file" class="form-control @error('utility') is-invalid @enderror" required="required">
+                                            @error('utility')
+                <span class="invalid-feedback">{{$message}}</span>
+                                            @enderror
+                </div>`);
+                documentGroup.find('div.bank').empty();
+            }
+        }
+    </script>
+
+
+    @endpush

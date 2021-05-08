@@ -151,9 +151,10 @@
                             $('#btn-submit').hide();
                             $('#btn-verify').show();
                             $('#btn-verify').attr('disabled',true);
+                            toastr.info(response.msg);
                         }else{
                             $('.input-musk').hide();
-
+                            toastr.error(response.msg);
                         }
                     }
                 });
@@ -167,9 +168,10 @@
                         method:'GET',
                         success:function (response){
                             if (response.status === 'success'){
-                                window.location.href = '';
+                                toastr.info(response.msg);
+                                window.location.href = '{{route('user.home')}}';
                             }else{
-                                toastr.warning('Incorrect otp');
+                                toastr.warning(response.msg);
                             }
                         }
                     });
