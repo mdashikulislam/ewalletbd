@@ -71,26 +71,21 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'city' => $data['city'],
+            'dob' => $data['dob'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
+            'is_info_verified' => 'verified',
             'password' => Hash::make($data['password']),
         ]);
     }
     public function register(Request $request){
 
         $this->validator($request->all())->validate();
-        $user = new User();
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->address = $request->address;
-        $user->city = $request->city;
-        $user->dob = $request->dob;
-        $user->phone = $request->phone;
-        $user->email = $request->email;
-        $user->password =Hash::make($request->first_name);
-        $user->is_info_verified = 'verified';
-        $user->save();
-        event(new Registered($user));
+
+        event(new Registered($user = $this->create($request->all())));
         $this->guard()->login($user);
         return $this->registered($request, $user)
             ?: redirect($this->redirectPath());

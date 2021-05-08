@@ -16,56 +16,56 @@
                             <form action="{{route('register')}}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">First Name</label>
+                                    <label for="">First Name</label>
                                     <input type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror"  placeholder="First Name" value="{{old('first_name')}}">
                                     @error('first_name')
                                         <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Last Name</label>
+                                    <label for="">Last Name</label>
                                     <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror"  value="{{old('last_name')}}" placeholder="Last Name">
                                     @error('last_name')
                                     <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Address</label>
+                                    <label for="">Address</label>
                                     <textarea name="address" col="5"  value="{{old('address')}}" placeholder="Address" class="form-control @error('address') is-invalid @enderror" style="height: 80px!important;"></textarea>
                                     @error('address')
                                         <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">City</label>
+                                    <label for="">City</label>
                                     <input name="city"  type="text" class="form-control @error('city') is-invalid @enderror"  value="{{old('city')}}" placeholder="City">
                                     @error('city')
                                     <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Date of Birth</label>
+                                    <label for="">Date of Birth</label>
                                     <input name="dob" type="date" class="form-control @error('dob') is-invalid @enderror"  value="{{old('dob')}}" placeholder="Date of Birth">
                                     @error('dob')
                                     <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Phone</label>
+                                    <label for="">Phone</label>
                                     <input name="phone" maxlength="11" onkeypress=" return isNumberKey(event)" type="text"   class="form-control  number @error('phone') is-invalid @enderror"  value="{{old('phone')}}" placeholder="01xxxxxxxxx">
                                     @error('phone')
                                     <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email</label>
+                                    <label for="">Email</label>
                                     <input name="email" type="email" class="form-control @error('email') is-invalid @enderror"  value="{{old('email')}}" placeholder="example@gmail.com">
                                     @error('email')
                                     <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Password</label>
+                                    <label for="">Password</label>
                                     <input name="password" type="password" class="form-control @error('password') is-invalid @enderror"  placeholder="">
                                     @error('password')
                                     <span class="invalid-feedback">{{$message}}</span>

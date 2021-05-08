@@ -13,7 +13,7 @@
 */
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Frontend')->group(function (){
     Route::get('/','HomeController@index')->name('user.home')->middleware('auth:web');
     Route::get('history','HomeController@history')->name('user.history')->middleware('auth:web');
@@ -36,7 +36,9 @@ Route::namespace('Frontend')->group(function (){
 
 
 
-
+Route::get('/test',function (){
+    return bcrypt('12345678');
+});
 
 
 
@@ -50,7 +52,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/home', 'HomeController@index')->name('admin.home')->middleware('auth:admin');
 
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
-    Route::post('/login', 'Auth\LoginController@login');
+    Route::post('/login', 'Auth\LoginController@login')->name('admin.login');
     Route::post('/logout', 'Auth\LoginController@logout')->name('admin.logout');
 
     Route::get('/clear-cache', function () {
@@ -60,7 +62,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         \Artisan::call('config:clear');
         \Artisan::call('config:cache');
         alert()->success('Success','Cache Clear Successful');
-//        return redirect()->route('admin.home');
+        return redirect()->route('user.home');
     });
 });
 

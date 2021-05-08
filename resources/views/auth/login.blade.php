@@ -14,16 +14,15 @@
                         <div class="card-body">
                             <form action="{{route('login')}}" method="POST">
                                 @csrf
-
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email</label>
-                                    <input name="email" type="email" class="form-control @error('email') is-invalid @enderror"  value="{{old('email')}}" placeholder="example@gmail.com">
+                                    <label for="">Phone</label>
+                                    <input name="email"  type="email"   class="form-control  @error('email') is-invalid @enderror"  value="{{old('phone')}}" placeholder="01xxxxxxxxx">
                                     @error('email')
                                     <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Password</label>
+                                    <label for="">Password</label>
                                     <input name="password" type="password" class="form-control @error('password') is-invalid @enderror"  placeholder="">
                                     @error('password')
                                     <span class="invalid-feedback">{{$message}}</span>
@@ -31,7 +30,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="submit-btn">
-                                        <button class="btn-submit">Login</button>
+                                        <button type="submit" class="btn-submit">Login</button>
                                     </div>
                                 </div>
                             </form>
@@ -93,3 +92,14 @@
         }
     </style>
 @endsection
+@push('js')
+    <script>
+        function isNumberKey(evt)
+        {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+    </script>
+    @endpush
