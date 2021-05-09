@@ -2,6 +2,9 @@
 namespace App\Http\Helpers;
 
 
+use App\Model\Frontend\BaseWallet;
+use App\Model\Frontend\CurrencyRate;
+
 class Helper {
     public static function checkProfileStatus()
     {
@@ -38,5 +41,45 @@ class Helper {
         $file->storeAs($destination,$fileName,'public');
         $fileNameWithDestination = $destination . '/'.$fileName;
         return $fileNameWithDestination;
+    }
+
+    public static function getCurrencyDropdown($selected = 0,$orderBy = "DESC")
+    {
+        $baseWallet = BaseWallet::select('id','name','type');
+        if ($orderBy == 'DESC'){
+            $baseWallet = $baseWallet->orderByDesc('id');
+        }else{
+            $baseWallet = $baseWallet->orderBy('id' , 'ASC');
+        }
+        $baseWallet = $baseWallet->where([
+            'status'=>'active',
+            'send'=>1,
+            'receive'=>1
+            ])->get();
+        $html = '';
+        if ($baseWallet){
+            foreach ($baseWallet as $currency){
+                $html .= '<option '.($currency->id == $selected ? "selected":'').' value="'.$currency->id.'">'.$currency->name.' ('.$currency->type.')</option>';
+            }
+        }
+        return $html;
+    }
+
+    public static function getWalletById($id = 0)
+    {
+        return BaseWallet::where('id',$id)->first();
+    }
+
+    public static function getWalletNameById($id =0)
+    {
+        $walletName = BaseWallet::where('id',$id)->first();
+        return $walletName->name;
+    }
+    public static function adjustTotalTk($total,$wallet)
+    {
+        $rate = CurrencyRate::where('base_wallet_id',$wallet)->first();
+        $rate = round((double)$rate->sell,2);
+        $convertDoller = round(($total/$rate),2);
+        return $convertDoller;
     }
 }

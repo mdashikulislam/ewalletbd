@@ -9,6 +9,7 @@ use App\Model\Admin\Admin;
 
 use App\Model\Frontend\Contact;
 use App\Model\Frontend\ContactUs;
+use App\Model\Frontend\CurrencyRate;
 use App\Model\Frontend\Upload;
 use App\NewsLatter;
 use App\User;
@@ -26,7 +27,10 @@ class HomeController extends Controller
             return Helper::checkProfileStatus();
         }
 
-        return view('frontend.index');
+        return view('frontend.index')
+            ->with([
+                'rates'=>CurrencyRate::all()
+            ]);
 
     }
 
@@ -152,4 +156,59 @@ class HomeController extends Controller
         }
         return redirect()->route('user.home');
     }
+
+    public function convertMoney($from,$to,$value)
+    {
+        if (empty($from) || empty($to)){
+            return;
+        }
+        $totalFrom = round((double)$value,2);
+        $getFromCurrency = Helper::getWalletById($from);
+        $getToCurrency = Helper::getWalletById($to);
+        if ($getFromCurrency->type === 'TK'){
+            $charge = 0;
+            $fee = 0;
+            $receiveValue = 0.00;
+            if ($getFromCurrency->id == 1){
+                $charge = (2/100) * $totalFrom;
+            }elseif ($getFromCurrency->id == 2 || $getFromCurrency->id == 3){
+                $charge = (1.5/100) * $totalFrom;
+            }else{
+                $charge = 0;
+            }
+            $receiveValue = round(($totalFrom - $charge),2);
+            $receiveValue = Helper::adjustTotalTk($receiveValue,$getToCurrency->id);
+            return $receiveValue;
+
+
+//            $fee = 0;
+//            $charge = 0;
+//            $discount = 0;
+//            $rate = CurrencyRate::where('base_wallet_id',$getToCurrency->id)->first();
+//            $total = 0.00;
+//            $receiveValue = 0.00;
+
+
+
+
+//            if ($value > 0 && $value < 99.99){
+//                if ($getToCurrency->id == 6 || $getToCurrency->id == 7 && $value < 30.01){
+//                    $fee = 60;
+//                }else{
+//                    $charge = ((2/100)*$value);
+//                    $fee = 0;
+//                    $total = $value - $charge ;
+//                    $receiveValue = ($total/$rate->buy);
+//                }
+//            }else if ($value > 99.99 && $value < 299.99){
+//
+//            }else{
+//
+//            }
+        }else{
+            return 'USD';
+        }
+        return $receiveValue;
+    }
+
 }

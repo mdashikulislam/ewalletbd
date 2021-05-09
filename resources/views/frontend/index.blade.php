@@ -1,5 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
+    {{\App\Http\Helpers\Helper::getCurrencyDropdown()}}
     <div class="blog-col">
         <div class="container">
             <div class="row">
@@ -10,7 +11,6 @@
                             <h1 style="margin-top:30px;color: #fff;display: flex;justify-content: center;font-weight:bold;font-size: 24px;">30 USD এর কম নেটেলার, স্ক্রিল অর্ডার করল ১২০ টাকা করে প্রতি ডলার ।</h1>
                         </div>
                         <div class="service">
-
                         </div>
                         <div class="currency-col">
                             <div class="row">
@@ -22,13 +22,10 @@
                                         <h1><i class="fa fa-arrow-down"></i>You send</h1>
                                     </div>
                                     <div class="change-currency">
-                                        <select class="form-control" name="" >
-                                            <option value="">Nagod</option>
-                                            <option value="">Nagod</option>
-                                            <option value="">Nagod</option>
-                                            <option value="">Nagod</option>
+                                        <select class="form-control" name="from" id="from">
+                                            {!! \App\Http\Helpers\Helper::getCurrencyDropdown(0,'ASC') !!}
                                         </select>
-                                        <input type="text" class="form-control" value="1">
+                                        <input id="from_value" name="from_value" type="text" class="form-control" value="1">
                                     </div>
                                     <div class="rate">
                                         <h2>Exchange rate: 110 BDT = 1 USD</h2>
@@ -42,13 +39,10 @@
                                         <h1><i class="fa fa-arrow-up"></i>You Receive</h1>
                                     </div>
                                     <div class="change-currency">
-                                        <select class="form-control" name="" id="">
-                                            <option value="">Nagod</option>
-                                            <option value="">Nagod</option>
-                                            <option value="">Nagod</option>
-                                            <option value="">Nagod</option>
+                                        <select class="form-control" name="to" id="to">
+                                            {!! \App\Http\Helpers\Helper::getCurrencyDropdown() !!}
                                         </select>
-                                        <input disabled type="text" class="form-control">
+                                        <input readonly name="fo_value" id="to_value" type="text" class="form-control">
                                     </div>
                                     <div class="rate">
                                         <div class="rate">
@@ -584,31 +578,15 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Skrill Doller</td>
-                                    <td>50tk</td>
-                                    <td>80tk</td>
+                                @if($rates)
+                                    @foreach($rates as $rate)
+                                    <tr>
+                                    <td>{{\App\Http\Helpers\Helper::getWalletNameById($rate->base_wallet_id)}}</td>
+                                    <td>{{$rate->buy.'TK'}}</td>
+                                    <td>{{$rate->sell.'TK'}}</td>
                                 </tr>
-                                <tr>
-                                    <td>Skrill Doller</td>
-                                    <td>50tk</td>
-                                    <td>80tk</td>
-                                </tr>
-                                <tr>
-                                    <td>Skrill Doller</td>
-                                    <td>50tk</td>
-                                    <td>80tk</td>
-                                </tr>
-                                <tr>
-                                    <td>Skrill Doller</td>
-                                    <td>50tk</td>
-                                    <td>80tk</td>
-                                </tr>
-                                <tr>
-                                    <td>Skrill Doller</td>
-                                    <td>50tk</td>
-                                    <td>80tk</td>
-                                </tr>
+                                    @endforeach
+                                @endif
                                 </tbody>
                             </table>
                         </div>
@@ -725,3 +703,34 @@
         </div>
     </div>
 @endsection
+@push('js')
+
+    <script>
+        $(document).ready(function (){
+            var fromSelector = $('#from');
+            var toSelector = $('#to');
+            $(document).on('change','#from,#to',function (){
+                var fromCurrencyID = fromSelector.val();
+                var toCurrencyID = toSelector.val();
+                var fromCurrencyValue = $('#from_value').val();
+                currencyConvert(fromCurrencyID,toCurrencyID,fromCurrencyValue);
+
+            })
+
+        });
+
+        function currencyConvert(fromSelector, toSelector,fromCurrencyValue ){
+
+            $.ajax({
+                url:`/exchange-rate/${fromSelector}/${toSelector}/${fromCurrencyValue}`,
+                method:'GET',
+                success:function (response){
+                    console.log(response);
+                }
+            });
+        }
+
+
+    </script>
+
+@endpush

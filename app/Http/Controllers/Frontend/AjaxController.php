@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Helpers\Helper;
+use App\Model\Frontend\CurrencyRate;
 use App\OtpVerify;
 use App\User;
 use Illuminate\Http\Request;
@@ -74,5 +75,28 @@ class AjaxController extends Controller
                 'status'=>'error'
             ]);
         }
+    }
+
+    public function exchange($from,$to,$value)
+    {
+        if (empty($from) || empty($to)){
+            return;
+        }
+        $totalFrom = round((double)$value,2);
+        $getFromCurrency = Helper::getWalletById($from);
+        $getToCurrency = Helper::getWalletById($to);
+        $rate = 0;
+
+        if ($getFromCurrency->type == 'USD'){
+            $currency = CurrencyRate::where('base_wallet_id',$getFromCurrency->id)->first();
+            $rate = round((double)$currency->buy,2);
+            $rate = round($totalFrom*$rate,2);
+        }else{
+            $currency = CurrencyRate::where('base_wallet_id',$getToCurrency->id)->first();
+            $rate =   round((double)$currency->sell,2);
+            $rate = round($totalFrom/$rate,2);
+        }
+        return $rate;
+
     }
 }
