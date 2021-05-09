@@ -1,6 +1,7 @@
 @php
     $currentRouteName = Route::currentRouteName();
     $prefix = Request::route()->getPrefix();
+
 @endphp
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

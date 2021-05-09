@@ -3,16 +3,13 @@
     <div class="register-col">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="heading-col">
-                        <h2>Registration</h2>
-                        <div class="border"></div>
-                    </div>
-                </div>
                 <div class="col-md-8 col-md-offset-2">
                     <div class="thumbnail" style="margin-top: 30px;">
+                        <div class="heading-col" style="padding-top: 50px;">
+                            <h2>Registration</h2>
+                            <div class="border"></div>
+                        </div>
                         <div class="card-body">
-
                             <form action="{{route('register')}}" method="POST">
                                 @csrf
                                 <div class="form-group">
@@ -31,7 +28,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Address</label>
-                                    <textarea name="address" col="5"  value="{{old('address')}}" placeholder="Address" class="form-control @error('address') is-invalid @enderror" style="height: 80px!important;"></textarea>
+                                    <textarea name="address" col="5" placeholder="Address" class="form-control @error('address') is-invalid @enderror" style="height: 80px!important;">{{old('address')}}</textarea>
                                     @error('address')
                                         <span class="invalid-feedback">{{$message}}</span>
                                     @enderror
@@ -85,10 +82,14 @@
     </div>
     <style>
         .register-col{
-            padding: 30px 0;
+            padding: 80px 0;
+            background-image: url("{{asset('frontend/img/bg2.jpg')}}");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
         .register-col .thumbnail{
-            border-color: #ff4b00;
+            border-color: transparent;
         }
         .register-col .thumbnail .card-body{
             padding: 30px;

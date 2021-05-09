@@ -14,7 +14,7 @@ class AjaxController extends Controller
     {
         $phoneNumber = \Auth::user()->phone;
         $otp = rand(1111,9999);
-        $sms = 'Your One Time Password (OTP) for EWalletBD is '.$otp.'. Helpline 01521458894';
+        $sms = 'Your One Time Password (OTP) for EWalletBD is '.$otp.'. Helpline 01922304499';
         try {
             $soapClient = new \SoapClient('https://api2.onnorokomsms.com/sendSMS.asmx?wsdl');
             $paramArray = array(

@@ -112,6 +112,10 @@ class HomeController extends Controller
     }
     public function documentVerification()
     {
+        if (Auth::user()->is_otp_verified == 'unverified'){
+            \Alert::warning('Please verify your OTP first');
+            return  redirect()->route('user.otp')->with(['phone'=>Auth::user()->phone]);
+        }
         if (Helper::checkDocumentIsVerified()){
             return Helper::checkDocumentIsVerified();
         }

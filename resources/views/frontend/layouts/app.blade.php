@@ -1,3 +1,8 @@
+@php
+    $routeName = Route::currentRouteName();
+    $verifyMenu = ($routeName != 'user.otp' && $routeName != 'user.document.verification') ? true : false;
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -277,16 +282,18 @@
                     <!-- Nav Start -->
                     <div class="nav-bar">
                         <ul class="sf-menu">
-                            <li class="current-menu-item"><a href="{{route('user.home')}}">Home</a></li>
-                            <li><a href="{{route('user.history')}}">History</a></li>
-                            <li><a href="{{route('user.about')}}">About</a></li>
-                            <li><a href="{{route('user.faq')}}">FAQ</a></li>
-                            <li><a href="{{route('user.contact')}}">Contact</a></li>
                             @guest
                             <li><a href="{{route('login')}}"><i class="fa fa-user-o fa-fw"></i><span>LogIn</span></a></li>
                             <li><a href="{{route('register')}}"><i class="fa fa fa-lock fa-fw"></i><span>Register</span></a></li>
                             @else
-                                <li><a href="{{route('login')}}"><i class="fa fa-user-o fa-fw"></i><span>Profile</span></a></li>
+                                @if($verifyMenu == true)
+                                    <li class="current-menu-item"><a href="{{route('user.home')}}">Home</a></li>
+                                    <li><a href="{{route('user.history')}}">History</a></li>
+                                    <li><a href="{{route('user.about')}}">About</a></li>
+                                    <li><a href="{{route('user.faq')}}">FAQ</a></li>
+                                    <li><a href="{{route('user.contact')}}">Contact</a></li>
+                                @endif
+                                <li><a href=""><i class="fa fa-user-o fa-fw"></i><span>Profile</span></a></li>
                                 <li><a id="btn-logout" href="javascript:void(0)"><i class="fa fa-sign-out fa-fw"></i><span>Logout</span></a></li>
                             @endguest
                         </ul>
@@ -297,18 +304,23 @@
             </div>
         </div>
     </div>
-    <div class="header-top-col">
-        <div class="container">
-            <div class="row">
-                <marquee><span style="color: #fff;font-size: 22px;"><span style="color: yellow;font-weight: bold;">Notice : </span> আমাদের কাছে আপনি Astropay Card paben । বিকাশ, রকেট, নগত থেকে টাকা পাঠালে ২% খরচ দিতে হবে। প্রয়োজনে কথা বলুনঃ-  What's App অথবা Live chart</span> </marquee>
+    @guest
+    @else
+        @if($verifyMenu == true)
+        <div class="header-top-col">
+            <div class="container">
+                <div class="row">
+                    <marquee><span style="color: #fff;font-size: 22px;"><span style="color: yellow;font-weight: bold;">Notice : </span> আমাদের কাছে আপনি Astropay Card paben । বিকাশ, রকেট, নগত থেকে টাকা পাঠালে ২% খরচ দিতে হবে। প্রয়োজনে কথা বলুনঃ-  What's App অথবা Live chart</span> </marquee>
+                </div>
             </div>
         </div>
-    </div>
-
+        @endif
+    @endguest
     @section('content')
     @show
     @guest
     @else
+    @if($verifyMenu == true)
     <div class="partner-col">
         <div class="container">
             <div class="row">
@@ -370,6 +382,8 @@
             </div>
         </div>
     </div>
+
+
     <div class="newsletter">
         <div class="container">
             <div class="row">
@@ -389,104 +403,37 @@
             </div>
         </div>
     </div>
+       @endif
     @endguest
 
-    <!--Newsletter End-->
-    <!--Footer main Start-->
-    <div class="footer-main">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-left">
-                        <div class="logo">
-                            <a href="index.html"><img src="{{asset('frontend/img/logo.png')}}" alt=""></a>
-                        </div>
-                        <div class="desc">
-                            <p style="color: #fff">Truck currency is one of the most popular online Exchanger in BD. </p>
-                        </div>
-                        <div class="horizantal-bar">
-                            <ul>
-                                <li><i class="fa fa-phone"></i><span>(00) 123 456 789</span></li>
-                            </ul>
-                        </div>
-                        <div class="footer-social">
-                            <ul>
-                                <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="same-box">
-                        <div class="title">
-                            <h2>RECENT POSTS</h2>
-                        </div>
-                        <div class="list">
-                            <ul>
-                                <li><a href=""><i class="fa fa-chevron-right"></i>Your Career Starts Here</a></li>
-                                <li><a href=""><i class="fa fa-chevron-right"></i>Summer Is Coming</a></li>
-                                <li><a href=""><i class="fa fa-chevron-right"></i>University Ranking</a></li>
-                                <li><a href=""><i class="fa fa-chevron-right"></i>Our New Campus</a></li>
-                                <li><a href=""><i class="fa fa-chevron-right"></i>Spark Of Genius</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="same-box">
-                        <div class="title">
-                            <h2>Social LINKS</h2>
-                        </div>
-                        <div class="list">
-                            <ul>
-                                <li><a href=""><i class="fa fa-chevron-right"></i>Our Campus</a></li>
-                                <li><a href=""><i class="fa fa-chevron-right"></i>Projects</a></li>
-                                <li><a href=""><i class="fa fa-chevron-right"></i>Research</a></li>
-                                <li><a href=""><i class="fa fa-chevron-right"></i>Job Opportunities</a></li>
-                                <li><a href=""><i class="fa fa-chevron-right"></i>Professors</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="same-box">
-                        <div class="title">
-                            <h2>Tutorial</h2>
-                        </div>
-                        <div class="video-social">
-                            <iframe   src="https://www.youtube.com/embed/itoNb1lb5hY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Footer main End-->
-    <!--Footer Bottom Start-->
     <div class="footer-bottom-col">
         <div class="container">
             <div class="row">
                 <div class="border">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-8 col-sm-8 col-xs-12">
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="index.html" class="active">EXCHANGE</a></li>
-                                <li><a href="affliet.html">Affiliate</a></li>
-                                <li><a href="history.html">History</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="">LogIn</a></li>
-                                <li><a href="">Register</a></li>
+                                @guest
+                                    <li><a class="{{$routeName == 'login' ? 'active':''}}" href="{{route('login')}}">LogIn</a></li>
+                                    <li><a class="{{$routeName == 'register' ? 'active':''}}" href="{{route('register')}}">Register</a></li>
+                                @else
+                                    @if($verifyMenu == true)
+                                    <li><a href="{{route('user.home')}}" class="active">Home</a></li>
+                                    <li><a href="{{route('user.history')}}">History</a></li>
+                                    <li><a href="{{route('user.about')}}">About</a></li>
+                                    <li><a href="{{route('user.faq')}}">FAQ</a></li>
+                                    <li><a href="{{route('user.contact')}}">Contact</a></li>
+                                    @endif
+                                    <li><a href="">Profile</a></li>
+                                    <li><a href="{{route('user.contact')}}">Logout</a></li>
+                                @endguest
+
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="copy-right">
-                            <p>&copy; 2021 - wallet.com</p>
+                            <p>&copy; 2021 - EWalletBD.com</p>
                         </div>
                     </div>
                 </div>
@@ -529,7 +476,7 @@
 <script type="text/javascript">
     (function () {
         var options = {
-            whatsapp: "01521458894", // WhatsApp number
+            whatsapp: "01922304499", // WhatsApp number
             call_to_action: "Message us", // Call to action
             position: "left", // Position may be 'right' or 'left'
         };

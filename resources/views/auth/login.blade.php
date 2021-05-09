@@ -3,18 +3,16 @@
     <div class="register-col">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="heading-col">
-                        <h2>Login</h2>
-                        <div class="border"></div>
-                    </div>
-                </div>
                 <div class="col-md-8 col-md-offset-2">
                     <div class="thumbnail" style="margin-top: 30px;">
+                        <div class="heading-col" style="padding-top: 50px;">
+                            <h2>Login</h2>
+                            <div class="border"></div>
+                        </div>
                         <div class="card-body">
                             <form action="{{route('login')}}" method="POST">
                                 @csrf
-                                <div class="form-group">
+                                <div class="form-group" style="margin-bottom: 20px;">
                                     <label for="">Phone</label>
                                     <input maxlength="11" onkeypress="return isNumberKey(event)" name="phone"  type="text"   class="form-control  @error('phone') is-invalid @enderror"  value="{{old('phone')}}" placeholder="01xxxxxxxxx">
                                     @error('phone')
@@ -42,10 +40,14 @@
     </div>
     <style>
         .register-col{
-            padding: 30px 0;
+            padding: 120px 0;
+            background-image: url("{{asset('frontend/img/32.gif')}}");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
         }
         .register-col .thumbnail{
-            border-color: #ff4b00;
+            border-color: transparent;
         }
         .register-col .thumbnail .card-body{
             padding: 30px;

@@ -3,21 +3,18 @@
     <div class="register-col">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="heading-col">
-                        <h2>OTP Verification</h2>
-                        <div class="border"></div>
-                    </div>
-                </div>
                 <div class="col-md-6 col-md-offset-3">
                     <div class="thumbnail" style="margin-top: 30px;">
+                        <div class="heading-col" style="margin-top: 30px;">
+                            <h2>OTP Verification</h2>
+                            <div class="border"></div>
+                        </div>
                         <div class="card-body">
-
                             <div class="form-group ">
                                 <label for="exampleInputEmail1" class="text-center" style="text-align: center;display: block;margin-bottom: 15px;font-size: 24px;">Phone Number</label>
                                 <input type="text" disabled name="first_name" class="form-control" style="width: 95%;" value="{{$phone}}" placeholder="Phone Number">
                             </div>
-                            <div class="form-group input-musk" style="display: none">
+                            <div class="form-group input-musk" style="display: none" >
                                 <input type="text" class="pincode-input-text-masked" id="otp_input" />
                             </div>
                             <div class="form-group">
@@ -61,10 +58,14 @@
         }
 
         .register-col{
-            padding: 30px 0;
+            padding: 80px 0;
+            background-image: url("{{asset('frontend/img/background.jpg')}}");
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
         .register-col .thumbnail{
-            border-color: #ff4b00;
+            border-color: transparent;
         }
         .register-col .thumbnail .card-body{
             padding: 30px;
@@ -79,14 +80,19 @@
         .register-col .thumbnail .form-control:focus{
             border-color: #ff4b00;
         }
-
-        .input-musk input{
-            margin-right: 30px!important;
-            border-top: 0!important;
-            border-left: 0!important;
-            border-right: 0!important;
-            border-radius: 0;
+        input.form-control.pincode-input-text.pincode-input-text-masked{
+            margin-right: 20px;
+            border: none;
             border: 2px solid #000;
+        }
+        .input-musk {
+            width: 50%;
+            margin-left: 25%;
+            margin-top: 30px;
+
+        }
+        .input-musk input{
+            border-radius: 0;
         }
         .input-musk input:last-child{
             margin-right: 0;
