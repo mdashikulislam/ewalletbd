@@ -39,7 +39,8 @@
     @yield('css')
 {{--    <link rel="preconnect" href="https://fonts.gstatic.com">--}}
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4391990874850640"
+            crossorigin="anonymous"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -472,7 +473,30 @@
 {{--<script src="{{asset('frontend/js/color-switcher.js')}}"></script>--}}
 <script src="{{asset('frontend/js/custom.js')}}"></script>
 
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v10.0'
+        });
+    };
 
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Your Chat Plugin code -->
+<div class="fb-customerchat"
+     attribution="page_inbox"
+     page_id="101686174998631">
+</div>
 <script type="text/javascript">
     (function () {
         var options = {
