@@ -5,6 +5,9 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="thumbnail" style="margin-top: 30px;">
+                        <div class="logo-panel" style="text-align: center;padding-top: 30px;">
+                            <img style="max-height: 50px;" src="{{asset('frontend/img/logo.png')}}" alt="">
+                        </div>
                         <div class="heading-col" style="margin-top: 30px;">
                             <h2>OTP Verification</h2>
                             <div class="border"></div>

@@ -15,7 +15,7 @@
     <!--Title-->
     <title>E-wallet</title>
     <!--Favicon Icon-->
-    <link rel="icon" type="image/x-icon" href="{{asset('frontend/img/favicon.ico')}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('frontend/img/favicon.png')}}" />
     <!--StyleSheet-->
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap-theme.min.css')}}">

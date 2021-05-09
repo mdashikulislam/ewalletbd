@@ -5,7 +5,10 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="thumbnail" style="margin-top: 30px;">
-                        <div class="heading-col" style="padding-top: 50px;">
+                        <div class="logo-panel" style="text-align: center;padding-top: 30px;">
+                            <img style="max-height: 50px;" src="{{asset('frontend/img/logo.png')}}" alt="">
+                        </div>
+                        <div class="heading-col" style="padding-top: 30px;">
                             <h2>Login</h2>
                             <div class="border"></div>
                         </div>
@@ -30,6 +33,9 @@
                                     <div class="submit-btn">
                                         <button type="submit" class="btn-submit">Login</button>
                                     </div>
+                                </div>
+                                <div class="form-group" style="text-align: center">
+                                    <p>Don't have account? <a style="color: #ff4b00;" href="{{route('register')}}">Click Here <i class="fa fa-arrow-right"></i> </a></p>
                                 </div>
                             </form>
                         </div>
