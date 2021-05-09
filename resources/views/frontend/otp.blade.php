@@ -18,12 +18,14 @@
                                 <input type="text" class="pincode-input-text-masked" id="otp_input" />
                             </div>
                             <div class="form-group">
+
                                 <div class="submit-btn">
+                                    <p  id="resend_text" style="text-align: center;display: none">You can resend your otp <span></span> sec later</p>
                                     <button class="btn-submit" id="btn-submit">Send OTP</button>
                                     <button style="display: none" class="btn-submit" id="btn-verify">Verify OTP</button>
+                                    <button style="display: none" class="btn-submit" id="btn-resend">Resend OTP</button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -131,6 +133,7 @@
 @push('js')
     <link rel="stylesheet" href="{{asset('frontend/toaster/bootstrap-pincode-input.css')}}">
     <script src="{{asset('frontend/toaster/bootstrap-pincode-input.js')}}"></script>
+    <script src="{{asset('frontend/toaster/jQuerySimpleCounter.js')}}"></script>
     <script>
         $(document).on('load',function (){
             $('.input-musk').hide();
@@ -146,17 +149,31 @@
                     }
                 }
             });
-            $('#btn-submit').on('click',function (){
+            $('#btn-submit,#btn-resend').on('click',function (){
                 event.preventDefault();
+                $('#btn-resend').hide();
                 $.ajax({
                     url:'{{route('send.otp')}}',
                     method:'GET',
                     success:function (response){
                         if (response.status == 'success'){
+                            $('#btn-verify').hide();
+                            $('#btn-verify').attr('disabled',false);
                             $('.input-musk').show()
                             $('#btn-submit').hide();
                             $('#btn-verify').show();
                             $('#btn-verify').attr('disabled',true);
+                            $('#resend_text').show();
+                            var timeleft = 6;
+                            var downloadTimer = setInterval(function(){
+                                if(timeleft >= 60){
+                                    clearInterval(downloadTimer);
+                                    $('#resend_text').hide();
+                                    $('#btn-resend').show();
+                                }
+                                $('#resend_text span').text( 60 - timeleft);
+                                timeleft++;
+                            }, 1000);
                             toastr.info(response.msg);
                         }else{
                             $('.input-musk').hide();
@@ -183,7 +200,9 @@
                     });
                 }
             });
+            function counter(){
 
+            }
         });
     </script>
 @endpush
