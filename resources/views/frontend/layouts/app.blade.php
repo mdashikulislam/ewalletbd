@@ -269,45 +269,38 @@
 </div>
 <!--Preloader Start End-->
 <div class="wrapper">
-    <div class="logo-nav-col">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="{{route('user.home')}}">
-                        <div class="logo">
-                            <img src="{{asset('frontend/img/logo.png')}}" alt="">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-8">
-                    <!-- Nav Start -->
-                    <div class="nav-bar">
-                        <ul class="sf-menu">
-                            @guest
-                            <li><a href="{{route('login')}}"><i class="fa fa-user-o fa-fw"></i><span>LogIn</span></a></li>
-                            <li><a href="{{route('register')}}"><i class="fa fa fa-lock fa-fw"></i><span>Register</span></a></li>
-                            @else
-                                @if($verifyMenu == true)
-                                    <li class="current-menu-item"><a href="{{route('user.home')}}">Home</a></li>
-                                    <li><a href="{{route('user.history')}}">History</a></li>
-                                    <li><a href="{{route('user.about')}}">About</a></li>
-                                    <li><a href="{{route('user.faq')}}">FAQ</a></li>
-                                    <li><a href="{{route('user.contact')}}">Contact</a></li>
-                                @endif
-                                <li><a href=""><i class="fa fa-user-o fa-fw"></i><span>Profile</span></a></li>
-                                <li><a id="btn-logout" href="javascript:void(0)"><i class="fa fa-sign-out fa-fw"></i><span>Logout</span></a></li>
-                            @endguest
-                        </ul>
-                        <form id="logout" action="{{route('logout')}}" method="POST" style="display: none">@csrf</form>
-                    </div>
-                    <!-- Nav End -->
-                </div>
-            </div>
-        </div>
-    </div>
     @guest
     @else
         @if($verifyMenu == true)
+        <div class="logo-nav-col">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="{{route('user.home')}}">
+                            <div class="logo">
+                                <img src="{{asset('frontend/img/logo.png')}}" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <!-- Nav Start -->
+                        <div class="nav-bar">
+                            <ul class="sf-menu">
+                                <li class="current-menu-item"><a href="{{route('user.home')}}">Home</a></li>
+                                <li><a href="{{route('user.history')}}">History</a></li>
+                                <li><a href="{{route('user.about')}}">About</a></li>
+                                <li><a href="{{route('user.faq')}}">FAQ</a></li>
+                                <li><a href="{{route('user.contact')}}">Contact</a></li>
+                                <li><a href=""><i class="fa fa-user-o fa-fw"></i><span>Profile</span></a></li>
+                                <li><a id="btn-logout" href="javascript:void(0)"><i class="fa fa-sign-out fa-fw"></i><span>Logout</span></a></li>
+                            </ul>
+                            <form id="logout" action="{{route('logout')}}" method="POST" style="display: none">@csrf</form>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="header-top-col">
             <div class="container">
                 <div class="row">
@@ -317,130 +310,124 @@
         </div>
         @endif
     @endguest
+
+
     @section('content')
     @show
+
+
     @guest
     @else
-    @if($verifyMenu == true)
-    <div class="partner-col">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="heading-col">
-                        <h2>We Accept</h2>
-                        <div class="border"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="partner-carousel">
-                        <div class="partner-content">
-                            <div class="img">
-                                <img src="{{asset('frontend/img/partner8.png')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="partner-content">
-                            <div class="img">
-                                <img src="{{asset('frontend/img/partner9.png')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="partner-content">
-                            <div class="img">
-                                <img src="{{asset('frontend/img/partner6.png')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="partner-content">
-                            <div class="img">
-                                <img src="{{asset('frontend/img/partner10.png')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="partner-content">
-                            <div class="img">
-                                <img src="{{asset('frontend/img/partner9.png')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="partner-content">
-                            <div class="img">
-                                <img src="{{asset('frontend/img/partner1.png')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="partner-content">
-                            <div class="img">
-                                <img src="{{asset('frontend/img/partner2.png')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="partner-content">
-                            <div class="img">
-                                <img src="{{asset('frontend/img/partner3.png')}}" alt="">
+        @if($verifyMenu == true)
+            <div class="partner-col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-col">
+                                <h2>We Accept</h2>
+                                <div class="border"></div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="advert" style="margin-top: 30px;">
-                    <img style="height: auto;width: 100%" src="{{asset('frontend/img/970x90.jpg')}}" alt="">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="partner-carousel">
+                                <div class="partner-content">
+                                    <div class="img">
+                                        <img src="{{asset('frontend/img/partner8.png')}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="partner-content">
+                                    <div class="img">
+                                        <img src="{{asset('frontend/img/partner9.png')}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="partner-content">
+                                    <div class="img">
+                                        <img src="{{asset('frontend/img/partner6.png')}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="partner-content">
+                                    <div class="img">
+                                        <img src="{{asset('frontend/img/partner10.png')}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="partner-content">
+                                    <div class="img">
+                                        <img src="{{asset('frontend/img/partner9.png')}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="partner-content">
+                                    <div class="img">
+                                        <img src="{{asset('frontend/img/partner1.png')}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="partner-content">
+                                    <div class="img">
+                                        <img src="{{asset('frontend/img/partner2.png')}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="partner-content">
+                                    <div class="img">
+                                        <img src="{{asset('frontend/img/partner3.png')}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advert" style="margin-top: 30px;">
+                            <img style="height: auto;width: 100%" src="{{asset('frontend/img/970x90.jpg')}}" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <div class="newsletter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="text">
+                                <h2>Subscribe to our Newsletter</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="input">
+                                <form action="{{route('newslatter')}}" method="post">
+                                    <input  name="email" type="email" class="form-control news_email" placeholder="Enter Your Email." required="required">
+                                    <button class="btn btn-success news_btn"><span>Subscribe!</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-col">
+                <div class="container">
+                    <div class="row">
+                        <div class="border">
+                            <div class="col-md-8 col-sm-8 col-xs-12">
+                                <div class="footer-menu">
+                                    <ul>
+                                        <li><a href="{{route('user.home')}}" class="active">Home</a></li>
+                                        <li><a href="{{route('user.history')}}">History</a></li>
+                                        <li><a href="{{route('user.about')}}">About</a></li>
+                                        <li><a href="{{route('user.faq')}}">FAQ</a></li>
+                                        <li><a href="{{route('user.contact')}}">Contact</a></li>
 
-
-    <div class="newsletter">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    <div class="text">
-                        <h2>Subscribe to our Newsletter</h2>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    <div class="input">
-                        <form action="{{route('newslatter')}}" method="post">
-                            <input  name="email" type="email" class="form-control news_email" placeholder="Enter Your Email." required="required">
-                            <button class="btn btn-success news_btn"><span>Subscribe!</span></button>
-                        </form>
+                                        <li><a href="">Profile</a></li>
+                                        <li><a href="{{route('user.contact')}}">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="copy-right">
+                                    <p>&copy; 2021 - EWalletBD.com</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-       @endif
+        @endif
     @endguest
-
-    <div class="footer-bottom-col">
-        <div class="container">
-            <div class="row">
-                <div class="border">
-                    <div class="col-md-8 col-sm-8 col-xs-12">
-                        <div class="footer-menu">
-                            <ul>
-                                @guest
-                                    <li><a class="{{$routeName == 'login' ? 'active':''}}" href="{{route('login')}}">LogIn</a></li>
-                                    <li><a class="{{$routeName == 'register' ? 'active':''}}" href="{{route('register')}}">Register</a></li>
-                                @else
-                                    @if($verifyMenu == true)
-                                    <li><a href="{{route('user.home')}}" class="active">Home</a></li>
-                                    <li><a href="{{route('user.history')}}">History</a></li>
-                                    <li><a href="{{route('user.about')}}">About</a></li>
-                                    <li><a href="{{route('user.faq')}}">FAQ</a></li>
-                                    <li><a href="{{route('user.contact')}}">Contact</a></li>
-                                    @endif
-                                    <li><a href="">Profile</a></li>
-                                    <li><a href="{{route('user.contact')}}">Logout</a></li>
-                                @endguest
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="copy-right">
-                            <p>&copy; 2021 - EWalletBD.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!--Footer Bottom End-->
     <!--Scroll To Top Start-->
     <a href="#" class="scrollup">
@@ -473,30 +460,6 @@
 {{--<script src="{{asset('frontend/js/color-switcher.js')}}"></script>--}}
 <script src="{{asset('frontend/js/custom.js')}}"></script>
 
-<!-- Messenger Chat Plugin Code -->
-<div id="fb-root"></div>
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            xfbml            : true,
-            version          : 'v10.0'
-        });
-    };
-
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<!-- Your Chat Plugin code -->
-<div class="fb-customerchat"
-     attribution="page_inbox"
-     page_id="101686174998631">
-</div>
 <script type="text/javascript">
     (function () {
         var options = {
