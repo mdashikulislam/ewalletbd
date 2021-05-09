@@ -1,6 +1,5 @@
 @extends('frontend.layouts.app')
 @section('content')
-    {{\App\Http\Helpers\Helper::getCurrencyDropdown()}}
     <div class="blog-col">
         <div class="container">
             <div class="row">
