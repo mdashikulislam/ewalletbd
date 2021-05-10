@@ -43,14 +43,18 @@ class Helper {
         return $fileNameWithDestination;
     }
 
-    public static function getCurrencyDropdown($selected = 0,$orderBy = "DESC")
+    public static function getCurrencyDropdown($selected = 0,$orderBy = "DESC",$type='')
     {
         $baseWallet = BaseWallet::select('id','name','type');
+        if ($type){
+            $baseWallet = $baseWallet->where('type',$type);
+        }
         if ($orderBy == 'DESC'){
             $baseWallet = $baseWallet->orderByDesc('id');
         }else{
             $baseWallet = $baseWallet->orderBy('id' , 'ASC');
         }
+
         $baseWallet = $baseWallet->where([
             'status'=>'active',
             'send'=>1,

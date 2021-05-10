@@ -28,7 +28,7 @@
                                         <input id="from_value" name="from_value" type="text" class="form-control" value="1">
                                     </div>
                                     <div class="rate">
-                                        <h2>Exchange rate: 110 BDT = 1 USD</h2>
+                                        <h2 id="exchange_text"></h2>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="rate">
                                         <div class="rate">
-                                            <h2>Our Reserve: 6457.5 USD</h2>
+                                            <h2 id="reserve_value"></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -707,25 +707,47 @@
 
     <script>
         $(document).ready(function (){
-            var fromSelector = $('#from');
-            var toSelector = $('#to');
+
             $(document).on('change','#from,#to',function (){
+                var fromSelector = $('#from');
+                var toSelector = $('#to');
                 var fromCurrencyID = fromSelector.val();
                 var toCurrencyID = toSelector.val();
                 var fromCurrencyValue = $('#from_value').val();
                 currencyConvert(fromCurrencyID,toCurrencyID,fromCurrencyValue);
 
             })
-
         });
+         function currencyData(fromSelector, toSelector){
+            console.log(fromSelector + ' - '+toSelector)
+            // $.ajax({
+            //     url:`/currency/info/${fromSelector}/${toSelector}`,
+            //     method:'GET',
+            //     success:function (response){
+            //         console.log(response);
+            //     }
+            // });
+        }
 
+         function currencyDropdownChange(fromCurrencyID){
+            $.ajax({
+                url:`/currency/dropdown/${fromCurrencyID}`,
+                method:'GET',
+                success:function (response){
+                    $('#to').empty();
+                    $('#to').append(response)
+                    currencyData($('#from').find(":selected").val(), $('#to').find(":selected").val());
+                }
+            });
+        }
         function currencyConvert(fromSelector, toSelector,fromCurrencyValue ){
-
             $.ajax({
                 url:`/exchange-rate/${fromSelector}/${toSelector}/${fromCurrencyValue}`,
                 method:'GET',
                 success:function (response){
-                    console.log(response);
+                    $('#exchange_text').text(response.exchange);
+                    $('#to_value').val(response.rate);
+                    $('#reserve_value').text(response.reserve);
                 }
             });
         }

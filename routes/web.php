@@ -30,6 +30,9 @@ Route::namespace('Frontend')->group(function (){
 //    Route::get('/convert/{from}/{to}/{value}','HomeController@convert')->name('user.convert');
     Route::get('/exchange-rate/{from}/{to}/{value}','AjaxController@exchange')->name('user.exchange');
 
+    Route::get('currency/info/{from}/{to}','AjaxController@currencyInfo')->name('currency.info');
+    Route::get('currency/dropdown/{from}','AjaxController@dropdown')->name('currency.dropdown');
+
 //    Route::post('user-validation','HomeController@validUser')->name('user.valid');
 //    Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');
 });
