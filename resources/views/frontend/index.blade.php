@@ -1,6 +1,5 @@
 @extends('frontend.layouts.app')
 @section('content')
-    {{\App\Http\Helpers\Helper::getCurrencyDropdown()}}
     <div class="blog-col">
         <div class="container">
             <div class="row">
@@ -23,7 +22,7 @@
                                     </div>
                                     <div class="change-currency">
                                         <select class="form-control" name="from" id="from">
-                                            {!! \App\Http\Helpers\Helper::getCurrencyDropdown(0,'ASC') !!}
+                                            {!! \App\Http\Helpers\Helper::getCurrencyDropdown() !!}
                                         </select>
                                         <input id="from_value" name="from_value" type="text" class="form-control" value="1">
                                     </div>
@@ -40,7 +39,7 @@
                                     </div>
                                     <div class="change-currency">
                                         <select class="form-control" name="to" id="to">
-                                            {!! \App\Http\Helpers\Helper::getCurrencyDropdown() !!}
+                                            {!! \App\Http\Helpers\Helper::getCurrencyDropdown(0,'ASC') !!}
                                         </select>
                                         <input readonly name="fo_value" id="to_value" type="text" class="form-control">
                                     </div>
@@ -572,7 +571,7 @@
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Currency Name</th>
+                                    <th>Currency</th>
                                     <th>Buy</th>
                                     <th>Sell</th>
                                 </tr>
@@ -602,94 +601,21 @@
                             <div class="border"></div>
                         </div>
                         <div class="reserve" style="margin-top: 20px;">
-                            <div class="media">
+                            @if($reservesAmount)
+                                @foreach($reservesAmount as $amount)
+                                <div class="media">
                                 <div class="media-left media-middle">
                                     <a href="#">
                                         <img style="max-width: 60px;max-height: 60px;" class="media-object" src="{{asset('frontend/img/skrill.png')}}" alt="...">
                                     </a>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Media heading</h4>
-                                    <p>-282500 BDT</p>
+                                    <h4 class="media-heading">{{$amount->name}}</h4>
+                                    <p>-{{$amount->amount.' '.$amount->type}}</p>
                                 </div>
                             </div>
-                            <div class="media">
-                                <div class="media-left media-middle">
-                                    <a href="#">
-                                        <img style="max-width: 60px;max-height: 60px;" class="media-object" src="{{asset('frontend/img/skrill.png')}}" alt="...">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Media heading</h4>
-                                    <p>-282500 BDT</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left media-middle">
-                                    <a href="#">
-                                        <img style="max-width: 60px;max-height: 60px;" class="media-object" src="{{asset('frontend/img/skrill.png')}}" alt="...">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Media heading</h4>
-                                    <p>-282500 BDT</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left media-middle">
-                                    <a href="#">
-                                        <img style="max-width: 60px;max-height: 60px;" class="media-object" src="{{asset('frontend/img/skrill.png')}}" alt="...">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Media heading</h4>
-                                    <p>-282500 BDT</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left media-middle">
-                                    <a href="#">
-                                        <img style="max-width: 60px;max-height: 60px;" class="media-object" src="{{asset('frontend/img/skrill.png')}}" alt="...">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Media heading</h4>
-                                    <p>-282500 BDT</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left media-middle">
-                                    <a href="#">
-                                        <img style="max-width: 60px;max-height: 60px;" class="media-object" src="{{asset('frontend/img/skrill.png')}}" alt="...">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Media heading</h4>
-                                    <p>-282500 BDT</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left media-middle">
-                                    <a href="#">
-                                        <img style="max-width: 60px;max-height: 60px;" class="media-object" src="{{asset('frontend/img/skrill.png')}}" alt="...">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Media heading</h4>
-                                    <p>-282500 BDT</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left media-middle">
-                                    <a href="#">
-                                        <img style="max-width: 60px;max-height: 60px;" class="media-object" src="{{asset('frontend/img/skrill.png')}}" alt="...">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Media heading</h4>
-                                    <p>-282500 BDT</p>
-                                </div>
-                            </div>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                     <div class="rectangle-col"style="margin-top: 30px;">
@@ -704,8 +630,15 @@
     </div>
 @endsection
 @push('js')
-
     <script>
+        $(window).on('load',function (){
+            var fromSelector = $('#from');
+            var toSelector = $('#to');
+            var fromCurrencyID = fromSelector.val();
+            var toCurrencyID = toSelector.val();
+            var fromCurrencyValue = $('#from_value').val();
+            currencyConvert(fromCurrencyID,toCurrencyID,fromCurrencyValue);
+        });
         $(document).ready(function (){
 
             $(document).on('change','#from,#to',function (){
@@ -715,8 +648,15 @@
                 var toCurrencyID = toSelector.val();
                 var fromCurrencyValue = $('#from_value').val();
                 currencyConvert(fromCurrencyID,toCurrencyID,fromCurrencyValue);
-
             })
+        });
+        $('#from_value').on('keyup',function (){
+            var fromSelector = $('#from');
+            var toSelector = $('#to');
+            var fromCurrencyID = fromSelector.val();
+            var toCurrencyID = toSelector.val();
+            var fromCurrencyValue = $('#from_value').val();
+            currencyConvert(fromCurrencyID,toCurrencyID,fromCurrencyValue);
         });
          function currencyData(fromSelector, toSelector){
             console.log(fromSelector + ' - '+toSelector)

@@ -7,6 +7,7 @@ use App\Http\Helpers\Helper;
 
 use App\Model\Admin\Admin;
 
+use App\Model\Frontend\BaseWallet;
 use App\Model\Frontend\Contact;
 use App\Model\Frontend\ContactUs;
 use App\Model\Frontend\CurrencyRate;
@@ -29,7 +30,8 @@ class HomeController extends Controller
 
         return view('frontend.index')
             ->with([
-                'rates'=>CurrencyRate::all()
+                'rates'=>CurrencyRate::whereIn('base_wallet_id',[5,6,7,8,10])->get(),
+                'reservesAmount'=>BaseWallet::all()
             ]);
 
     }

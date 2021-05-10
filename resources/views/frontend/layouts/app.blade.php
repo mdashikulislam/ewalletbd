@@ -146,6 +146,7 @@
         }
         .today-rate table tbody tr td{
             border: 2px solid #fff;
+            font-size: 14px;
         }
         .blog-right{
             border-radius: 5px;
