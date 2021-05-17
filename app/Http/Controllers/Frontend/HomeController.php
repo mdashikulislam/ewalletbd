@@ -163,6 +163,33 @@ class HomeController extends Controller
         return redirect()->route('user.home');
     }
 
+    public function convert(Request $request)
+    {
+        $form = $request->from;
+        $formValue = $request->from_value;
+        $to = $request->to;
+        $toValue = $request->to_value;
+        if (empty($form)){
+            return redirect()->back();
+        }
+        $form = Helper::getWalletById($request->from);
+        $to = Helper::getWalletById($request->to);
+        $fee = 0;
+        $charge = 0;
+        $formCurrencyRate = CurrencyRate::where('base_wallet_id',$form->id)->first();
+        $toCurrencyRate = CurrencyRate::where('base_wallet_id',$to->id)->first();
+//        if ($form->type === 'USD' && $to->type === "TK"){
+//            return 'if';
+//        }else if ($form->type === 'USD' && $to->type === "USD"){
+//            return 'else if';
+//        }else if ($form->type === 'TK' && $to->type === "TK"){
+//            return 'TK';
+//        }else{
+//            return $formCurrencyRate;
+//        }
+
+        return view('frontend.convert');
+    }
     public function convertMoney($from,$to,$value)
     {
         if (empty($from) || empty($to)){

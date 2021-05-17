@@ -12,54 +12,57 @@
                         <div class="service">
                         </div>
                         <div class="currency-col">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="send-logo">
-                                        <div class="img">
-                                            <img src="{{asset('frontend/img/bkash.png')}}" alt="">
+                            <form action="{{route('convert')}}" method="POST">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="send-logo">
+                                            <div class="img">
+                                                <img src="{{asset('frontend/img/bkash.png')}}" alt="">
+                                            </div>
+                                            <h1><i class="fa fa-arrow-down"></i>You send</h1>
                                         </div>
-                                        <h1><i class="fa fa-arrow-down"></i>You send</h1>
-                                    </div>
-                                    <div class="change-currency">
-                                        <select class="form-control" name="from" id="from">
-                                            {!! \App\Http\Helpers\Helper::getCurrencyDropdown() !!}
-                                        </select>
-                                        <input id="from_value" name="from_value" type="text" class="form-control" value="1">
-                                    </div>
-                                    <div class="rate">
-                                        <h2 id="exchange_text"></h2>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="send-logo">
-                                        <div class="img">
-                                            <img src="{{asset('frontend/img/bkash.png')}}" alt="">
+                                        <div class="change-currency">
+                                            <select class="form-control" name="from" id="from">
+                                                {!! \App\Http\Helpers\Helper::getCurrencyDropdown() !!}
+                                            </select>
+                                            <input id="from_value" name="from_value" type="text" class="form-control" value="1">
                                         </div>
-                                        <h1><i class="fa fa-arrow-up"></i>You Receive</h1>
-                                    </div>
-                                    <div class="change-currency">
-                                        <select class="form-control" name="to" id="to">
-                                            {!! \App\Http\Helpers\Helper::getCurrencyDropdown(0,'ASC') !!}
-                                        </select>
-                                        <input readonly name="fo_value" id="to_value" type="text" class="form-control">
-                                    </div>
-                                    <div class="rate">
                                         <div class="rate">
-                                            <h2 id="reserve_value"></h2>
+                                            <h2 id="exchange_text"></h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="send-logo">
+                                            <div class="img">
+                                                <img src="{{asset('frontend/img/bkash.png')}}" alt="">
+                                            </div>
+                                            <h1><i class="fa fa-arrow-up"></i>You Receive</h1>
+                                        </div>
+                                        <div class="change-currency">
+                                            <select class="form-control" name="to" id="to">
+                                                {!! \App\Http\Helpers\Helper::getCurrencyDropdown(0,'ASC') !!}
+                                            </select>
+                                            <input readonly name="to_value" id="to_value" type="text" class="form-control">
+                                        </div>
+                                        <div class="rate">
+                                            <div class="rate">
+                                                <h2 id="reserve_value"></h2>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="exchange-btn">
-                                        <div class="button">
-                                            <div class="button-effict"></div>
-                                            <a href="">Exchange</a>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="exchange-btn">
+                                            <div class="button">
+                                                <div class="button-effict"></div>
+                                                <a id="submit_btn" href="">Exchange</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
 
                     </div>
@@ -647,9 +650,18 @@
                 var fromCurrencyID = fromSelector.val();
                 var toCurrencyID = toSelector.val();
                 var fromCurrencyValue = $('#from_value').val();
+                if (parseInt(fromCurrencyID) === parseInt(toCurrencyID)){
+                    $('#submit_btn').parent('div').hide();
+                }else{
+                    $('#submit_btn').parent('div').show();
+                }
                 currencyConvert(fromCurrencyID,toCurrencyID,fromCurrencyValue);
             })
         });
+        $('#submit_btn').on('click',function (){
+            event.preventDefault();
+            $(this).closest('form').submit();
+        })
         $('#from_value').on('keyup',function (){
             var fromSelector = $('#from');
             var toSelector = $('#to');

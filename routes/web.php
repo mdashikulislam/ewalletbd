@@ -27,6 +27,7 @@ Route::namespace('Frontend')->group(function (){
     Route::get('/document/verification','HomeController@documentVerification')->name('user.document.verification');
     Route::post('/document/store','HomeController@documentStore')->name('user.document.store');
     Route::get('/otp/verify/{otp}','AjaxController@verify')->name('otp.verify');
+    Route::post('convert','HomeController@convert')->name('convert');
 //    Route::get('/convert/{from}/{to}/{value}','HomeController@convert')->name('user.convert');
     Route::get('/exchange-rate/{from}/{to}/{value}','AjaxController@exchange')->name('user.exchange');
 
