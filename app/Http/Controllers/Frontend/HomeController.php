@@ -176,19 +176,54 @@ class HomeController extends Controller
         $to = Helper::getWalletById($request->to);
         $fee = 0;
         $charge = 0;
-        $formCurrencyRate = CurrencyRate::where('base_wallet_id',$form->id)->first();
-        $toCurrencyRate = CurrencyRate::where('base_wallet_id',$to->id)->first();
-//        if ($form->type === 'USD' && $to->type === "TK"){
-//            return 'if';
-//        }else if ($form->type === 'USD' && $to->type === "USD"){
-//            return 'else if';
-//        }else if ($form->type === 'TK' && $to->type === "TK"){
-//            return 'TK';
-//        }else{
-//            return $formCurrencyRate;
-//        }
+        if ($form->type === 'USD' && $to->type === "TK"){
+            $torate = CurrencyRate::where('base_wallet_id',$form->id)->first();
+            $net = $formValue;
+            $total = round($fee+$charge+$net,2);
+        }else if ($form->type === 'USD' && $to->type === "USD"){
+            return 'else if';
+        }else if ($form->type === 'TK' && $to->type === "TK"){
+            return 'TK';
+        }else{
+            if ($form->id == 1){
+                $charge = round((2 / 100) * (double)$formValue,2);
+            }else if ($form->id == 2 || $form->id == 3){
+                $charge = round((1.5 / 100) * (double)$formValue,2);
+            }else{
+                $charge = 0;
+            }
 
-        return view('frontend.convert');
+            if ($to->id == 6 || $to->id == 7 && $toValue < 30.00){
+                $fee = 60;
+                $net = $formValue;
+
+            }else if($toValue > 100.00 && $toValue < 299.99){
+                $torate = CurrencyRate::where('base_wallet_id',$to->id)->first();
+                $torate = $torate->sell - 1;
+                $toValue = round((double)$formValue / $torate,2);
+                $net = $formValue;
+            }else if($toValue > 300.00){
+                $torate = CurrencyRate::where('base_wallet_id',$to->id)->first();
+                $torate = $torate->sell - 2;
+                $toValue = round((double)$formValue / $torate,2);
+                $net = $formValue;
+            }else{
+                $net = $formValue;
+            }
+            $total = round($fee+$charge+$net,2);
+        }
+        $data = [
+            'fee'=>$fee,
+            'charge'=>$charge,
+            'from'=>$form->id,
+            'fromValue'=>$formValue,
+            'to'=>$to->id,
+            'toValue'=>$toValue,
+            'payable'=>$total
+        ];
+        return view('frontend.convert')->with([
+            'data'=>$data
+        ]);
     }
     public function convertMoney($from,$to,$value)
     {

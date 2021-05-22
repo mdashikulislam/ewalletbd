@@ -73,7 +73,10 @@ class Helper {
     {
         return BaseWallet::where('id',$id)->first();
     }
-
+    public static function getCurrencyTypeById($id = 0){
+        $type = BaseWallet::where('id',$id)->first();
+        return $type->type;
+    }
     public static function getWalletNameById($id =0)
     {
         $walletName = BaseWallet::where('id',$id)->first();

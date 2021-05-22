@@ -650,6 +650,7 @@
                 var fromCurrencyID = fromSelector.val();
                 var toCurrencyID = toSelector.val();
                 var fromCurrencyValue = $('#from_value').val();
+
                 if (parseInt(fromCurrencyID) === parseInt(toCurrencyID)){
                     $('#submit_btn').parent('div').hide();
                 }else{
