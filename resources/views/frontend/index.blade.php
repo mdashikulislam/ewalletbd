@@ -24,7 +24,7 @@
                                         </div>
                                         <div class="change-currency">
                                             <select class="form-control" name="from" id="from">
-                                                {!! \App\Http\Helpers\Helper::getCurrencyDropdown() !!}
+                                                {!! \App\Http\Helpers\Helper::getCurrencyDropdown(0,'ASC') !!}
                                             </select>
                                             <input id="from_value" name="from_value" type="text" class="form-control" value="1">
                                         </div>
@@ -41,7 +41,7 @@
                                         </div>
                                         <div class="change-currency">
                                             <select class="form-control" name="to" id="to">
-                                                {!! \App\Http\Helpers\Helper::getCurrencyDropdown(0,'ASC') !!}
+                                                {!! \App\Http\Helpers\Helper::getCurrencyDropdown() !!}
                                             </select>
                                             <input readonly name="to_value" id="to_value" type="text" class="form-control">
                                         </div>
@@ -651,11 +651,11 @@
                 var toCurrencyID = toSelector.val();
                 var fromCurrencyValue = $('#from_value').val();
 
-                if (parseInt(fromCurrencyID) === parseInt(toCurrencyID)){
-                    $('#submit_btn').parent('div').hide();
-                }else{
-                    $('#submit_btn').parent('div').show();
-                }
+                // if (parseInt(fromCurrencyID) === parseInt(toCurrencyID)){
+                //     $('#submit_btn').parent('div').hide();
+                // }else{
+                //     $('#submit_btn').parent('div').show();
+                // }
                 currencyConvert(fromCurrencyID,toCurrencyID,fromCurrencyValue);
             })
         });
@@ -701,6 +701,11 @@
                     $('#exchange_text').text(response.exchange);
                     $('#to_value').val(response.rate);
                     $('#reserve_value').text(response.reserve);
+                    if (response.is_convert == 1){
+                        $('#submit_btn').parent('div').show();
+                    }else{
+                        $('#submit_btn').parent('div').hide();
+                    }
                 }
             });
         }

@@ -87,6 +87,14 @@ class AjaxController extends Controller
         $totalFrom = round((double)$value,2);
         $getFromCurrency = Helper::getWalletById($from);
         $getToCurrency = Helper::getWalletById($to);
+
+        $isConvert = 1;
+        if ($getFromCurrency->type == 'TK' && $getToCurrency->type=="TK"){
+            $isConvert = 0;
+        }
+        if ($getFromCurrency->type == 'USD' && $getToCurrency->type=="USD"){
+            $isConvert = 0;
+        }
         $fromValue = 0;
         $toValue = 0;
         $rate = 0;
@@ -122,7 +130,8 @@ class AjaxController extends Controller
             'reserve'=>$reserve,
             'exchange'=>$exchangeRate,
             'from_image'=>$getFromCurrency->image,
-            'to_image'=>$getToCurrency->image
+            'to_image'=>$getToCurrency->image,
+            'is_convert'=>$isConvert
         ];
         return response()->json($data);
     }
