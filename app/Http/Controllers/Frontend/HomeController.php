@@ -12,6 +12,7 @@ use App\Model\Frontend\Contact;
 use App\Model\Frontend\ContactUs;
 use App\Model\Frontend\CurrencyRate;
 use App\Model\Frontend\Upload;
+use App\Model\Frontend\TnxValue;
 use App\NewsLatter;
 use App\User;
 use Carbon\Carbon;
@@ -22,6 +23,38 @@ use function React\Promise\all;
 
 class HomeController extends Controller
 {
+
+    public function is_convert_input(Request $request)
+    {
+      //dd($request->all());
+      $tnxvalue = new TnxValue;
+
+
+      $tnxvalue->user_id = Auth::id();
+      $tnxvalue->tnx_number = $request->name;
+      $tnxvalue->send_you = $request->send_you;
+      $tnxvalue->send_you_base_wallets_id = $request->send_you_base_wallets_id;
+      $tnxvalue->send_you_type = $request->send_you_type;
+      $tnxvalue->send_you_method = $request->send_you_method;
+      $tnxvalue->fee = $request->fee;
+      $tnxvalue->fee_type = $request->fee_type;
+
+      $tnxvalue->charge = $request->name;
+      $tnxvalue->charge_type = $request->send_you;
+      $tnxvalue->send_to = $request->send_to;
+      $tnxvalue->send_to_base_wallets_id = $request->send_to_base_wallets_id;
+      $tnxvalue->send_to_type = $request->send_to_type;
+      $tnxvalue->send_to_method = $request->send_to_method;
+
+      $tnxvalue->process = 1;
+
+      $tnxvalue->save();
+
+     return redirect()->route('user.home');
+   
+
+    }
+
     public function index()
     {
         if (Helper::checkProfileStatus()){
@@ -278,5 +311,8 @@ class HomeController extends Controller
         }
         return $receiveValue;
     }
+
+
+    
 
 }

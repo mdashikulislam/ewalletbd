@@ -34,6 +34,8 @@ Route::namespace('Frontend')->group(function (){
     Route::get('currency/info/{from}/{to}','AjaxController@currencyInfo')->name('currency.info');
     Route::get('currency/dropdown/{from}','AjaxController@dropdown')->name('currency.dropdown');
 
+    Route::post('tnx/convert/input','HomeController@is_convert_input')->name('tnx.convert.input')->middleware('auth:web');
+
 //    Route::post('user-validation','HomeController@validUser')->name('user.valid');
 //    Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');
 });
@@ -56,6 +58,20 @@ Route::get('/test',function (){
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/','HomeController@index')->name('admin.mainpage')->middleware('auth:admin');
     Route::get('/home', 'HomeController@index')->name('admin.home')->middleware('auth:admin');
+
+    Route::get('all/exchange', 'HomeController@all_exchange_show')->name('admin.exchange.show')->middleware('auth:admin');
+    Route::get('all/exchange/{id}', 'HomeController@all_exchange_change')->name('change.status.exchange')->middleware('auth:admin');
+    Route::post('all/exchange/update/post/{id}', 'HomeController@all_exchange_change_post')->name('post.status.change')->middleware('auth:admin');
+
+    Route::get('currency/exchange/rate', 'HomeController@currency_exchange_show')->name('currency.exchange.show')->middleware('auth:admin');
+    Route::get('currency/exchange/rate/{id}', 'HomeController@currency_exchange_edit')->name('currency.exchange.edit')->middleware('auth:admin');
+    Route::post('update/currency/exchange/rate/{id}', 'HomeController@currency_exchange_update')->name('currency.exchange.update')->middleware('auth:admin');
+
+    Route::get('reserve/exchange/rate', 'HomeController@reserve_exchange_show')->name('reserve.exchange.show')->middleware('auth:admin');
+    Route::get('reserve/exchange/rate/{id}', 'HomeController@reserve_exchange_edit')->name('reserve.exchange.edit')->middleware('auth:admin');
+    Route::post('update/reserve/exchange/rate/{id}', 'HomeController@reserve_exchange_update')->name('reserve.exchange.update')->middleware('auth:admin');
+
+
 
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\LoginController@login')->name('admin.login');

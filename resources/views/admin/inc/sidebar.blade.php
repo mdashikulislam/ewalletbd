@@ -55,6 +55,63 @@
                         </div>
                     </ul>
                 </li>
+
+                <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard1"
+                       aria-expanded="false" aria-controls="dashboard1">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">EXCHANGES</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/skill-development') show @endif"  id="dashboard1"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="@if($currentRouteName === 'admin.skill.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('admin.exchange.show')}}">
+                                    <span class="nav-text">All EXCHANGES</span>
+                                </a>
+                            </li>
+                            
+                        </div>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard2"
+                       aria-expanded="false" aria-controls="dashboard2">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Currency Rate</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/skill-development') show @endif"  id="dashboard2"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="@if($currentRouteName === 'admin.skill.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('currency.exchange.show')}}">
+                                    <span class="nav-text">Show Currency Rate</span>
+                                </a>
+                            </li>
+                            
+                        </div>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard3"
+                       aria-expanded="false" aria-controls="dashboard3">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Reserve Data</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/skill-development') show @endif"  id="dashboard3"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="@if($currentRouteName === 'admin.skill.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('reserve.exchange.show')}}">
+                                    <span class="nav-text">Show Reserve Data</span>
+                                </a>
+                            </li>
+                            
+                        </div>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

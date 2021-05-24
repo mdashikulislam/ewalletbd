@@ -4,6 +4,7 @@ namespace App\Http\Helpers;
 
 use App\Model\Frontend\BaseWallet;
 use App\Model\Frontend\CurrencyRate;
+use App\User;
 
 class Helper {
     public static function checkProfileStatus()
@@ -88,5 +89,12 @@ class Helper {
         $rate = round((double)$rate->sell,2);
         $convertDoller = round(($total/$rate),2);
         return $convertDoller;
+    }
+
+    public static function getUserName($id){
+        $data = User::where('id',$id)->first();
+        $name = $data->first_name .' '. $data->last_name;
+
+        return $name;
     }
 }
