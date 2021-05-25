@@ -52,6 +52,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="exchange-btn">
@@ -62,6 +63,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                             </form>
                         </div>
 

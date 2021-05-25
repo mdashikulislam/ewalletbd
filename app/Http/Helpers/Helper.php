@@ -83,6 +83,11 @@ class Helper {
         $walletName = BaseWallet::where('id',$id)->first();
         return $walletName->name;
     }
+    public static function getWalletAccountById($id =0)
+    {
+        $walletName = BaseWallet::where('id',$id)->first();
+        return $walletName->account_info;
+    }
     public static function adjustTotalTk($total,$wallet)
     {
         $rate = CurrencyRate::where('base_wallet_id',$wallet)->first();

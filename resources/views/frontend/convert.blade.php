@@ -59,8 +59,11 @@
                          
                           @csrf
                 <div class="card-body">
+                      <div class="form-group">
+                      <p>Plz send your money our {{App\Http\Helpers\Helper::getWalletNameById($data['from'])}} Number: {{App\Http\Helpers\Helper::getWalletAccountById($data['from'])}}</P>
+                      </div>
                        <div class="form-group">
-                    <label>Tnx Number</label>
+                    <label>Tnx Number/Account Number</label>
                     <input type="text" class="form-control" name="name"  placeholder="Enter your Tnx Number" required>
 
                     <input type="hidden" class="form-control" name="send_you"  placeholder="Enter your Tnx Number" value="{{$send_you}}">

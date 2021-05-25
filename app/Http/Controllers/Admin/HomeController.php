@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Frontend\TnxValue;
 use App\Model\Frontend\BaseWallet;
 use App\Model\Frontend\CurrencyRate;
+use App\Notice;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -110,6 +111,31 @@ class HomeController extends Controller
        $currency_rate->amount = $request->amount;
        
        $currency_rate->save();
+
+
+       return back();
+    }
+
+    public function notice_show()
+    {
+        return view('admin.notice.show');
+    }
+
+    public function notice_edit($id)
+    {
+       $notice = Notice::find($id);
+
+       return view('admin.notice.edit',compact('notice'));
+    }
+
+    public function notice_update(Request $request,$id)
+    {
+       $notice = Notice::find($id);
+
+       $notice->notice = $request->notice;
+
+       
+       $notice->save();
 
 
        return back();

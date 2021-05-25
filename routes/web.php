@@ -72,6 +72,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('update/reserve/exchange/rate/{id}', 'HomeController@reserve_exchange_update')->name('reserve.exchange.update')->middleware('auth:admin');
 
 
+    Route::get('notice/show', 'HomeController@notice_show')->name('notice.show')->middleware('auth:admin');
+    Route::get('notice/edit/{id}', 'HomeController@notice_edit')->name('notice.edit')->middleware('auth:admin');
+    Route::post('update/notice/{id}', 'HomeController@notice_update')->name('notice.update')->middleware('auth:admin');
+
+
 
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\LoginController@login')->name('admin.login');

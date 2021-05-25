@@ -305,7 +305,13 @@
         <div class="header-top-col">
             <div class="container">
                 <div class="row">
-                    <marquee><span style="color: #fff;font-size: 22px;"><span style="color: yellow;font-weight: bold;">Notice : </span> আমাদের কাছে আপনি Astropay Card paben । বিকাশ, রকেট, নগত থেকে টাকা পাঠালে ২% খরচ দিতে হবে। প্রয়োজনে কথা বলুনঃ-  What's App অথবা Live chart</span> </marquee>
+
+                    <marquee><span style="color: #fff;font-size: 22px;"><span style="color: yellow;font-weight: bold;">
+                        @foreach(App\Notice::orderby('id','asc')->get() as $notice)
+                    Notice : </span> {{$notice->notice}}</span>
+                        @endforeach
+
+                     </marquee>
                 </div>
             </div>
         </div>
