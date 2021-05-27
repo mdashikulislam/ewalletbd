@@ -313,6 +313,12 @@ class HomeController extends Controller
     }
 
 
+   public function profile_show()
+   {
+    $profile = User::find(Auth::user()->id);
+    return view('frontend.profile',compact('profile'));
+   }
+
     
 
 }

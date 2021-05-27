@@ -7,6 +7,7 @@ use App\Model\Frontend\TnxValue;
 use App\Model\Frontend\BaseWallet;
 use App\Model\Frontend\CurrencyRate;
 use App\Notice;
+use App\User;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -136,6 +137,40 @@ class HomeController extends Controller
 
        
        $notice->save();
+
+
+       return back();
+    }
+
+    public function user_show()
+    {
+       return view('admin.user.show');
+    }
+
+    public function user_edit($id)
+    {
+       $user = User::find($id);
+
+       return view('admin.user.edit',compact('user'));
+    }
+
+    public function user_update(Request $request,$id)
+    {
+       $user = User::find($id);
+
+       $user->first_name = $request->first_name;
+       $user->last_name = $request->last_name;
+       $user->email  = $request->email ;
+       $user->address = $request->address;
+       $user->phone  = $request->phone ;
+
+       $user->dob = $request->dob;
+       $user->city = $request->city;
+       $user->is_info_verified = $request->is_info_verified;
+       $user->id_type = $request->id_type;
+
+       
+       $user->save();
 
 
        return back();

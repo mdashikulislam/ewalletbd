@@ -131,6 +131,25 @@
                         </div>
                     </ul>
                 </li>
+
+                <li>
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard5"
+                       aria-expanded="false" aria-controls="dashboard5">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">User Data</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse @if($prefix === 'admin/skill-development') show @endif"  id="dashboard5"
+                         data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            <li class="@if($currentRouteName === 'admin.skill.index') active @endif">
+                                <a class="sidenav-item-link" href="{{route('user.show')}}">
+                                    <span class="nav-text">Show User Data</span>
+                                </a>
+                            </li>
+                            
+                        </div>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

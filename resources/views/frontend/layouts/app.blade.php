@@ -292,7 +292,7 @@
                                 <li><a href="{{route('user.about')}}">About</a></li>
                                 <li><a href="{{route('user.faq')}}">FAQ</a></li>
                                 <li><a href="{{route('user.contact')}}">Contact</a></li>
-                                <li><a href=""><i class="fa fa-user-o fa-fw"></i><span>Profile</span></a></li>
+                                <li><a href="{{route('profile.show')}}"><i class="fa fa-user-o fa-fw"></i><span>Profile</span></a></li>
                                 <li><a id="btn-logout" href="javascript:void(0)"><i class="fa fa-sign-out fa-fw"></i><span>Logout</span></a></li>
                             </ul>
                             <form id="logout" action="{{route('logout')}}" method="POST" style="display: none">@csrf</form>

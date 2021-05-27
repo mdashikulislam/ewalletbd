@@ -36,6 +36,8 @@ Route::namespace('Frontend')->group(function (){
 
     Route::post('tnx/convert/input','HomeController@is_convert_input')->name('tnx.convert.input')->middleware('auth:web');
 
+    Route::get('profile','HomeController@profile_show')->name('profile.show')->middleware('auth:web');;
+
 //    Route::post('user-validation','HomeController@validUser')->name('user.valid');
 //    Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');
 });
@@ -75,6 +77,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('notice/show', 'HomeController@notice_show')->name('notice.show')->middleware('auth:admin');
     Route::get('notice/edit/{id}', 'HomeController@notice_edit')->name('notice.edit')->middleware('auth:admin');
     Route::post('update/notice/{id}', 'HomeController@notice_update')->name('notice.update')->middleware('auth:admin');
+
+   
+    Route::get('user/show', 'HomeController@user_show')->name('user.show')->middleware('auth:admin');
+    Route::get('user/edit/{id}', 'HomeController@user_edit')->name('user.edit')->middleware('auth:admin');
+    Route::post('update/user/{id}', 'HomeController@user_update')->name('user.update')->middleware('auth:admin');
 
 
 
