@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Helpers\Helper;
 
 use App\Model\Admin\Admin;
@@ -26,7 +28,7 @@ class HomeController extends Controller
 
     public function is_convert_input(Request $request)
     {
-      //dd($request->all());
+     // dd($request->all());
       $tnxvalue = new TnxValue;
 
 
@@ -39,7 +41,7 @@ class HomeController extends Controller
       $tnxvalue->fee = $request->fee;
       $tnxvalue->fee_type = $request->fee_type;
 
-      $tnxvalue->charge = $request->name;
+      $tnxvalue->charge = $request->charge;
       $tnxvalue->charge_type = $request->send_you;
       $tnxvalue->send_to = $request->send_to;
       $tnxvalue->send_to_base_wallets_id = $request->send_to_base_wallets_id;
@@ -49,6 +51,30 @@ class HomeController extends Controller
       $tnxvalue->process = 1;
 
       $tnxvalue->save();
+
+      $send_you = $request->send_you . $request->send_you_type . '('.$request->send_you_method .')';
+      $send_to = $request->send_to . $request->send_to_type . '('.$request->send_to_method .')';
+
+
+      $details = [
+            'tnx_number' => $request->name,
+            'send_you' => $send_you,
+            'fee'=> $request->fee,
+            'charge' =>$request->charge,
+            'send_to' =>$send_to,
+            'url' => 'In above you get your invoice id and track your product .',
+            'website' => 'www.grabsoft.tech'
+
+
+        ];
+
+        $email = Auth::user()->email;
+
+    Mail::to($email)
+         ->cc($email)
+         ->bcc($email)
+         
+       ->send(new WelcomeMail($details));
 
      return redirect()->route('user.home');
    
@@ -318,6 +344,11 @@ class HomeController extends Controller
     $profile = User::find(Auth::user()->id);
     return view('frontend.profile',compact('profile'));
    }
+
+   public function profile_document_show(){
+    $user = User::find(Auth::user()->id);
+    return view('frontend.profile_document',compact('user'));
+   }   
 
     
 

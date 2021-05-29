@@ -48,31 +48,87 @@
                 </div>
                 <div class="form-group">
                     <label for="event_type">City</label>
-                  <input type="text" class="form-control" name="city" value="{{$user->city}}"> 
-                   
+                  <input type="text" class="form-control" name="city" value="{{$user->city}}">   
                 </div>
 
                 <div class="form-group">
                     <label for="event_type">Verified :</label>
                     <select class="form-control" name="is_info_verified">
+                        <option value="{{$user->is_info_verified}}">{{$user->is_info_verified}}</option>
                         <option value="verified">Active</option>
                         <option value="unverified">Inactive</option>
                     </select>
-                   
                 </div>
 
                 <div class="form-group">
                     <label for="event_type">Id Type :</label>
                     <select class="form-control" name="id_type">
+                        <option value="{{$user->id_type}}">{{$user->id_type}}</option>
                         <option value="nid">NID</option>
                         <option value="passport">Passport</option>
                         <option value="driving">Driving</option>
                     </select>
-              
-                   
                 </div>
 
-         
+               <div class="form-group">
+                    <label for="event_type">Nid front Image</label>
+                    <img src="{{asset('storage/'.$user->nid_front)}}" height="100" width="100">
+                  <input type="file" class="form-control" name="image"> 
+               </div>
+
+               <div class="form-group">
+                    <label for="event_type">Nid Back Image</label>
+                    <img src="{{asset('storage/'.$user->nid_back)}}" height="100" width="100">
+                  <input type="file" class="form-control" name="image"> 
+               </div>
+
+               <div class="form-group">
+                    <label for="event_type">Passport Image</label>
+                    <img src="{{asset('storage/'.$user->passport)}}" height="100" width="100">
+                  <input type="file" class="form-control" name="image"> 
+               </div>
+
+               <div class="form-group">
+                    <label for="event_type">Driving Image</label>
+                    <img src="{{asset('storage/'.$user->driving)}}" height="100" width="100">
+                  <input type="file" class="form-control" name="image"> 
+               </div>
+
+               <div class="form-group">
+                    <label for="event_type">Document Type :</label>
+                    <select class="form-control" name="document_type">
+                        <option value="{{$user->document_type}}">{{$user->document_type}}</option>
+                        <option value="utility">utility</option>
+                        <option value="bank">bank</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="event_type">Image</label>
+                    <img src="{{asset('storage/'.$user->image)}}" height="100" width="100">
+                  <input type="file" class="form-control" name="image"> 
+               </div>
+
+               <div class="form-group">
+                    <label for="event_type">Document Type Verified:</label>
+                    <select class="form-control" name="is_document_verified">
+                        <option value="{{$user->is_document_verified}}">{{$user->is_document_verified}}</option>
+                        <option value="utility">utility</option>
+                        <option value="bank">bank</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="event_type">status:</label>
+                    <select class="form-control" name="status">
+                        <option value="{{$user->status}}">{{$user->status}}</option>
+                        <option value="active">active</option>
+                        <option value="pending">pending</option>
+                         <option value="reject">reject</option>
+                    </select>
+                </div>
+
+
 
 
 

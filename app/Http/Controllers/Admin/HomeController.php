@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Helpers\Helper;
 use App\Model\Frontend\TnxValue;
 use App\Model\Frontend\BaseWallet;
 use App\Model\Frontend\CurrencyRate;
@@ -156,6 +157,7 @@ class HomeController extends Controller
 
     public function user_update(Request $request,$id)
     {
+     // dd($request->all());
        $user = User::find($id);
 
        $user->first_name = $request->first_name;
@@ -168,6 +170,43 @@ class HomeController extends Controller
        $user->city = $request->city;
        $user->is_info_verified = $request->is_info_verified;
        $user->id_type = $request->id_type;
+
+       $user->document_type = $request->document_type;
+       $user->is_document_verified = $request->is_document_verified;
+
+       $user->status = $request->status;
+
+       if ($request->id_type == 'nid'){
+        if(!is_null($request->nid_front)){
+          $user->nid_front =Helper::uploadSingleImage($request->nid_front,'nid_front','nf');
+        }
+        if(!is_null($request->nid_front)){
+           $user->nid_back = Helper::uploadSingleImage($request->nid_back,'nid_back','nb');
+        }
+            
+           
+        }else if ($request->id_type == 'driving'){
+            if(!is_null($request->driving)){
+            $user->driving = Helper::uploadSingleImage($request->driving,'driving','dr');
+          }
+        }else{
+            if(!is_null($request->passport)){
+            $user->passport = Helper::uploadSingleImage($request->passport,'passport','pp');
+          }
+        }
+        if ($request->document_type == 'utility'){
+            if(!is_null($request->utility)){
+            $user->utility = Helper::uploadSingleImage($request->utility,'utility','ut');
+          }
+        }else{
+           if(!is_null($request->bank)){
+            $user->bank = Helper::uploadSingleImage($request->bank,'bank','bn');
+          }
+        }
+        if(!is_null($request->image)){
+        $user->image = Helper::uploadSingleImage($request->image,'image','img');
+      }
+
 
        
        $user->save();

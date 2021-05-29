@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    
+
            <div class="table-wrapper-scroll-y my-custom-scrollbar" style="margin-top: 20px;">
                             <table class="table table-bordered table-hover">
                     <thead>
@@ -28,7 +28,7 @@
                                 	<td>
                                 		{{$key +1 }}
                                 	</td>
-                                    
+
                                     <td>
                                         {{$user->first_name}} {{$user->last_name}}
                                     </td>
@@ -40,24 +40,24 @@
                                     </td>
                                     <td>
                                         @if($user->is_info_verified == 'verified')
-                                      <button class="btn btn-success btn-sm">Active</button>  
+                                      <button class="btn btn-success btn-sm">Active</button>
                                         @else
-                                        <button class="btn btn-danger btn-sm">InActive<</button>
+                                        <button class="btn btn-danger btn-sm">InActive</button>
                                         @endif
 
                                     </td>
-                                    
+
                                     <td><a href="{{route('user.edit',$user->id)}}"  class="btn btn-success">Edit</a></td>
                                 </tr>
                                 @endforeach
-                       
+
                                 </tbody>
                             </table>
                         </div>
 
                 </div>
             </div>
-            
+
         </div>
 
         </div>

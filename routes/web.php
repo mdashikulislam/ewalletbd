@@ -35,11 +35,9 @@ Route::namespace('Frontend')->group(function (){
     Route::get('currency/dropdown/{from}','AjaxController@dropdown')->name('currency.dropdown');
 
     Route::post('tnx/convert/input','HomeController@is_convert_input')->name('tnx.convert.input')->middleware('auth:web');
+    Route::get('profile','HomeController@profile_show')->name('profile.show')->middleware('auth:web');
+    Route::get('profile/document','HomeController@profile_document_show')->name('profile.show.document')->middleware('auth:web');
 
-    Route::get('profile','HomeController@profile_show')->name('profile.show')->middleware('auth:web');;
-
-//    Route::post('user-validation','HomeController@validUser')->name('user.valid');
-//    Route::post('attempt-register-validation','HomeController@attemptRegisterValidation')->name('user.attempt.register');
 });
 
 
