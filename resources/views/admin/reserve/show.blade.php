@@ -18,8 +18,8 @@
                                 <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Amout</th>
-                             
+                                    <th>Amount</th>
+                                    <th>Account Number/Phone Number</th>
                                     <th>Status</th>
                                 </tr>
                                 </thead>
@@ -30,6 +30,9 @@
                                     <td>
                                         {{$resever->amount}} {{$resever->type}}
                                     </td>
+                                    <td>{{$resever->account_info}}</td>
+                                    <td><img src="{{asset('storage/'.$resever->image)}}" height="100" width="100"></td>
+
                                     <td><a href="{{route('reserve.exchange.edit',$resever->id)}}"  class="btn btn-success">Edit</a></td>
                                 </tr>
                                 @endforeach

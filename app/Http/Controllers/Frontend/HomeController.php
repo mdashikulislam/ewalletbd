@@ -89,7 +89,7 @@ class HomeController extends Controller
 
         return view('frontend.index')
             ->with([
-                'rates'=>CurrencyRate::whereIn('base_wallet_id',[5,6,7,8,10])->get(),
+                'rates'=>CurrencyRate::whereIn('base_wallet_id',[5,6,7,8,10,11,12,13])->get(),
                 'reservesAmount'=>BaseWallet::all()
             ]);
 

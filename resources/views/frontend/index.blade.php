@@ -68,9 +68,9 @@
                         </div>
 
                     </div>
-                    <div class="advert" style="margin-top: 30px;">
+                    <!-- <div class="advert" style="margin-top: 30px;">
                         <img style="height: auto;width: 100%" src="{{asset('frontend/img/970x90.jpg')}}" alt="">
-                    </div>
+                    </div> -->
                     <div class="latest-col" style="margin-top: 30px;">
                         <div class="heading-col">
                             <h2>Latest exchanges</h2>
@@ -367,8 +367,10 @@
                             </table>
                         </div>
                     </div>
-                    <div class="advert" style="margin-top: 30px;">
-                        <img style="height: auto;width: 100%" src="{{asset('frontend/img/970x90.jpg')}}" alt="">
+                    <div class="advert">
+                        <a href="https://secure.tickmill.com?utm_campaign=Pelican+Trading+970x90+English&utm_content=IB57822450&utm_medium=ib&utm_source=link&utm_term=banner&lp=https%3A%2F%2Ftickmill.com%2Faccounts%2Ftypes%2Fclassic%2F" target="_blank">
+            <img src="https://cdn.tickmill.com/promotional/3/banners/static/ca_7_970x90-pelican-copy.png" width="850" />
+            </a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-12 col-xs-12">
@@ -402,7 +404,8 @@
                     </div>
                     <div class="rectangle-col"style="margin-top: 30px;">
                         <div class="advert" >
-                            <img style="width: 100%;height: auto" src="{{asset('frontend/img/as.jpg')}}" alt="">
+                            
+                            <iframe width="300" height="250" src="https://www.youtube.com/embed/q9FU1cnyWUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="reserve-col" style="margin-top: 30px;">
@@ -416,7 +419,12 @@
                                 <div class="media">
                                 <div class="media-left media-middle">
                                     <a href="#">
+                                        @if(!empty($amount->image))
+                                        <img style="max-width: 60px;max-height: 60px;" class="media-object" src="{{asset('storage/'.$amount->image)}}" alt="...">
+                                        @else
                                         <img style="max-width: 60px;max-height: 60px;" class="media-object" src="{{asset('frontend/img/skrill.png')}}" alt="...">
+                                        @endif
+                                        
                                     </a>
                                 </div>
                                 <div class="media-body">
@@ -428,11 +436,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="rectangle-col"style="margin-top: 30px;">
-                        <div class="advert" >
-                            <img style="width: 100%;height: auto" src="{{asset('frontend/img/as.jpg')}}" alt="">
-                        </div>
-                    </div>
+                  
 
                 </div>
             </div>

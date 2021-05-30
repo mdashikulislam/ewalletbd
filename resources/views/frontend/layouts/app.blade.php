@@ -382,7 +382,9 @@
                             </div>
                         </div>
                         <div class="advert" style="margin-top: 30px;">
-                            <img style="height: auto;width: 100%" src="{{asset('frontend/img/970x90.jpg')}}" alt="">
+                            <a href="https://secure.tickmill.com?utm_campaign=MOVE+TO+TICKMILL&utm_content=IB57822450&utm_medium=ib&utm_source=link&utm_term=banner&lp=https%3A%2F%2Ftickmill.com%2Faccounts%2Ftypes%2Fclassic%2F" target="_blank">
+            <img src="https://cdn.tickmill.com/promotional/3/banners/static/970x250-EN.jpg"/>
+            </a>
                         </div>
                     </div>
                 </div>
@@ -470,7 +472,7 @@
 <script type="text/javascript">
     (function () {
         var options = {
-            whatsapp: "+8801922304499", // WhatsApp number
+            whatsapp: "+19184168953", // WhatsApp number
             call_to_action: "Message us", // Call to action
             position: "left", // Position may be 'right' or 'left'
         };
@@ -481,6 +483,7 @@
 
     })();
 </script>
+
 <script>
     toastr.options = {
         "closeButton": true,

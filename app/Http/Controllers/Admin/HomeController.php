@@ -111,6 +111,10 @@ class HomeController extends Controller
 
        $currency_rate->name = $request->name;
        $currency_rate->amount = $request->amount;
+       $currency_rate->account_info = $request->account_info;
+       if(!is_null($request->image)){
+        $currency_rate->image = Helper::uploadSingleImage($request->image,'currency','img');
+      }
        
        $currency_rate->save();
 

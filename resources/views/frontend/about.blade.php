@@ -61,88 +61,21 @@
                 <div class="col-md-12">
                     <div class="desc">
                         <div class="text">
-                            <p>Welcome to the most trusted currency exchanger website in Bangladesh. Truck currency is one of the most popular online Exchanger in BD. Here you can change your money in a moment. We are the first people in Bangladesh who are working with all types of crypt currencies. For Freelancers, here is an innovative arrangement of money. From here you can exchange money from Bangladeshi taka in dollars or USD to BDT. Can be used to change the widely used international wallet in a few moments. Customers can avail this facility from anywhere in Bangladesh. Our Exchange Services PayPal, Skrill, Neteller, Payza, Pyoneer, Perfect Money, Web Money, BTC, ETH, XRP, BCH, LTC, DASH, XMR, ETC, ZEC, MONA, crypto currency</p>
-                        </div>
-                        <div class="list-view" style="margin-top: 20px;">
-                            <div class="tx-vw">
-                                <h2><i class="fa fa-handshake-o fa-fw"></i>Why are we?</h2>
-                                <ul class="ul">
-                                    <li><i class="fa fa-hand-o-right fa-fw"></i>  Famous foreign money exchangeers in Bangladesh
-                                    </li>
-                                    <li><i class="fa fa-hand-o-right  fa-fw"></i>  24/7 support</li>
-                                    <li><i class="fa fa-hand-o-right  fa-fw"></i> Maximum rate</li>
-                                    <li><i class="fa fa-hand-o-right  fa-fw"></i>  Instant Transaction
-                                    </li>
-                                    <li><i class="fa fa-hand-o-right  fa-fw"></i>  International Wallet Facility
-                                    </li>
-                                    <li><i class="fa fa-hand-o-right  fa-fw"></i>  Trustworthy and Fancy Exchanges
-                                    </li>
-                                    <li><i class="fa fa-hand-o-right  fa-fw"></i>  Money transactions in 15 minutes
-                                    </li>
-                                    <li><i class="fa fa-hand-o-right  fa-fw"></i>  Your all time history
-                                    </li>
-                                    <li><i class="fa fa-hand-o-right  fa-fw"></i>   Payment proof
+                            <p>ewalletbd এটি একটি ডলার লেনদেনকারী ওয়েবসাইট। আমরা বাংলাদেশি নাগরিক তা বাংলাদেশের নাগরিকদের সেবা দিতে ডিজিটাল দেশে ডিজিটাল সিস্টেমে লেনদেন বাবস্থা নিয়ে আমরা সকল ফ্রীলান্সারদের হাতের নাগালে। বাংলাদেশের অথশক্তিকে আরও শক্তিশালী করতে আমরা ewalletbd আমরা সব সমায় চেষ্টা করি গ্রাহকের সাধের ভিতর রেট রেখে লেনদেন করার। <br>
+আমাদের থেকে আপনি খুব কম সমায়ে নেটেলার,স্ক্রিল,পারফেক্ট মানি, ওয়েবমানি সহ আরও অনেক ডলার লেনদেন করে বাংলা টাকাতে পরিবর্তন করতে পারবেন। আমরা আমাদের অনলাইন ভিরতিক কাজের জন্য লাইসেন্স নেয়ার কাজ চলমান অবস্থায়।<br>
+ অনেকেই অনলাইনে ছোট-খাটো কাজ করেন ও অল্প পরিমাণ ডলার ইনকাম করেন। আবার অনেক সময় ডোমেইন/হোস্টিং বা অন্য কোনো পণ্য পারচেস করার জন্য কারো কারো সামান্য পরিমান ডলারের প্রয়োজন হয়। সেক্ষেত্রে এতো অল্প পরিমাণ ডলার কোনো ব্যাংক বা আর্থিক প্রতিষ্ঠানের কাছে বিক্রি করতে পারেন না এবং নিজেদের প্রয়োজন মতো ডলার ব্যাংকের মাধ্যমে কিনতেও পারেন না। তাই ফেসবুকসহ বিভিন্ন সোশ্যাল মিডিয়াতে যোগাযোগ করে কারো কাছ থেকে ডলার কিনতে গিয়ে এবং ইনকাম করা ডলার কারো কাছে বিক্রি করতে গিয়ে প্রায়ই প্রতারণার শিকার হতে হয়। তাদের কথা চিন্তা করেই আমাদের এ প্রয়াস। এখানে ক্রয়-বিক্রয়ের রেট একটু কম/বেশি হলেও আপনারা সম্পূর্ণ নিশ্চিন্তে ক্রয়-বিক্রয় করতে পারবেন। আশা করি আপনারা পাশে থাকবেন এবং প্রয়োজনীয় পরামর্শ দিয়ে আমাদের সাহায্য করবেন।<br>
+আমাদের বিষয়ের ওপেন মতামত দিতে আমাদের youtube এ চলে যান সেইখানে আপনি সবার সাথে ওপেন মতামত নিয়ে ভেবে চিনতে আমাদেরে সাথে লেনদেন করতে পারবেন। <br>
+ewalletbd.com এটি একটি এক্সচেঞ্জ সাইট। এটি একটি বিশ্বস্ত সাইট, এখানে আপনি ডলার এক্সচেঞ্জ করতে পারবেন এবং খুব সহজেই ডলার থেকে টাকাই রপান্তরিত করে আপনার একাউন্টে নিতে পারবেন  । আপনি সম্পূর্ণরূপে নিরাপদে ক্রয়-বিক্রয় করতে পারবেন। আমি আশা করি আপনি আমাদের পাশে থাকবেন।<br>
 
-                                    </li>
-                                    <li><i class="fa fa-hand-o-right  fa-fw"></i>   Affiliate Program
-
-                                    </li>
-                                    <li><i class="fa fa-hand-o-right  fa-fw"></i>  Certified Exchanger
-                                    </li>
-                                </ul>
-                                <p style="margin-top: 30px;">In the era of modern e-commerce, the Truck currency has begun to focus on the ease and simplicity of money transactions on the Internet. Especially in recent times foreign currency transactions are increasing. Use Truck currency to eliminate the unauthorized fraud and suffering of different currency transactions. However, the Truck currency online payment gateway has been playing a significant role in money transactions on the internet so far.</p>
-                                <p style="margin-top: 30px;">There is no limit to receiving or transferring money to the personal account. However, if the user accepts the money or receives a dollar, the charge will be 4% from the principal. However, one of the advantages is that the registration of the user through their own referral link or the currency exchange can be 0.5% bonus. If the website or blog is linked to your referral link, then the commission will receive a service exchange.</p>
-                            </div>
+ডলার ক্রয়-বিক্রয় করার জন্য একটি বিশ্বস্ত প্রতিষ্ঠান ewalletbd.com A Trusted currency Exchange site.  আপনি কি অনলাইন থেকে ডলার Income করেন? আপনার ডলার গুলি এখানে বেশি দামে বিক্রয় করতে পারবেন । আসুন আপনিও এখানে লেন দেন করুন ১০০% নিশ্চয়তার সাথে।বিকাশ, রকেট, নগদ মোবাইল ব্যাংকিং এবং ব্যাংকের মাধ্যমে ডলার ক্রয়-বিক্রয় করার সুবিধা । <br>
+আমাদের Facebook পেজে লাইক দিয়ে সাথে থাকুন। এবং নিয়মিত আপডেট নিন। Click here
+বিশেষ দ্রষ্টব্যঃ আমাদের সেবা গ্রহণ করে অনলাইন জুয়া, অর্থ পাচার (মানি লন্ডারিং), সন্ত্রাসী কর্মকাণ্ড বা এজাতীয় যেকোনো অপরাধজনিত কাজ করা সম্পূর্ণভাবে নিষিদ্ধ। অপরাধের জন্য এ সার্ভিস ব্যবহার করলে ewalletbd কর্তৃপক্ষ কোনোভাবেই দায়ী থাকবে না। প্রয়োজনে আইনানুগ ব্যবস্থাও নেওয়া হতে পারে।</p>
                         </div>
+                       
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="advert" style="margin-top: 30px;">
-                        <img style="height: auto;width: 100%" src="img/970x90.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="desc">
-                        <div class="list-view" style="margin-top: 20px;">
-                            <div class="tx-vw">
-                                <h2><i class="fa fa-handshake-o fa-fw"></i>Benefits of using Truck currency</h2>
-                                <ul class="ul">
-                                    <li><i class="fa fa-angle-double-right fa-fw"></i>  Truck currency for Bangladesh is a good exchange of currency. We provide specialization services for Bangladesh through https://www.truckcurrency.com.
-                                    </li>
-                                    <li><i class="fa fa-angle-double-right  fa-fw"></i>   You can exchange money at any time through bKash, Rocket, Dutch Bangla Bank, BRAC Bank.
-                                    </li>
-                                    <li><i class="fa fa-angle-double-right  fa-fw"></i>  From your Truck currency account, you can load the dollar into the international wallet.
-                                    </li>
-                                    <li><i class="fa fa-angle-double-right  fa-fw"></i>   Many online shops in Bangladesh support the page, so you can buy the product from a lot of shop with the penny account.
-
-                                </ul>
-                                <p style="margin-top: 30px;display: block">For more information or to inquire, please click on Contact .</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc">
-                        <div class="list-view" style="margin-top: 20px;">
-                            <div class="tx-vw">
-                                <h2><i class="fa fa-handshake-o fa-fw"></i> Registration Process currency</h2>
-                                <p style="margin-top: 10px;">Registration is very easy at Truck currency, which is completed within a few minutes and it is free. But to get the full advantage of the prospect, there are a few things to be sure. In order to strengthen the security of Truck currency, it checks every user in three ways. These are - verification of address, bank account verification and credit / debit card verification. The third method is optional, but the first two must be completed.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc">
-                        <div class="list-view" style="margin-top: 20px;">
-                            <div class="tx-vw">
-                                <h2><i class="fa fa-handshake-o fa-fw"></i>  Currency Converted
-                                </h2>
-                                <p style="margin-top: 10px;"> If you want to withdraw money from your bank, please add your bank account details to the receive option. In this case, your bank name, your bank account number etc. will be given. As soon as you add a bank account to Truck currency you can withdraw money in the bank. However, in this case, your payment will be completed in the proposal. In order to receive the money, the user has to pay a minimum amount of 10$ in the meaning of the Sending Option.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
         </div>
     </div>
 @endsection

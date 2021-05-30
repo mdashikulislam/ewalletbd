@@ -25,6 +25,18 @@
                    
                 </div>
 
+                <div class="form-group">
+                    <label for="event_type"> Account Info</label>
+                  <input type="text" class="form-control" name="account_info" value="{{$currency_rate->account_info}}">  
+                </div>
+
+                <div class="form-group">
+                    <label for="event_type"> Image</label>
+                    <img src="{{asset('storage/'.$currency_rate->image)}}" height="100" width="100">
+                  <input type="file" class="form-control" name="image">  
+                  <small>image size : 416*279</small>
+                </div>
+
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit Now</button>
