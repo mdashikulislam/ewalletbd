@@ -4,6 +4,7 @@ namespace App\Http\Helpers;
 
 use App\Model\Frontend\BaseWallet;
 use App\Model\Frontend\CurrencyRate;
+use App\Model\Frontend\TnxValue;
 use App\User;
 
 class Helper {
@@ -101,5 +102,11 @@ class Helper {
         $name = $data->first_name .' '. $data->last_name;
 
         return $name;
+    }
+
+    public static function onProcessCount()
+    {
+        $processCount = TnxValue::where('success',0)->where('process',1)->where('rejected',0)->count();
+        return $processCount;
     }
 }

@@ -15,7 +15,7 @@ class HomeController extends Controller
 {
 
     public function index(){
-        return view('admin.home');
+        return view('admin.exchange.show');
     }
 
     public function all_exchange_show()
@@ -31,9 +31,10 @@ class HomeController extends Controller
 
     public function all_exchange_change_post(Request $request,$id)
     {
+      //dd($request->all());
     	$invoice = "TNX0001";
     	$rand =rand(0,999);
-    	if($request->payment_status == 2){
+    	
 
     	$send_you = BaseWallet::where('id',$request->send_you_base_wallets_id)->first();
         
@@ -48,21 +49,24 @@ class HomeController extends Controller
         $send_to->save();
 
         $tnx_value = TnxValue::find($id);
-
+        if($request->payment_status == 2){
         $tnx_value->success = 1;
-
+      }elseif($request->payment_status == 3){
+        $tnx_value->rejected = 1;
+        }
         $tnx_value->payment_number = $invoice . ($rand + $id );
 
         $tnx_value->save();	
         return redirect()->route('admin.exchange.show');
 
-    	}elseif($request->payment_status == 3){
-    		$tnx_value->rejected = 1;
-    		 $tnx_value->save();
-    		 return redirect()->route('admin.exchange.show');	
-    	}else{
-    		return redirect()->route('admin.exchange.show');
-    	}
+    	// }elseif($request->payment_status == 3){
+     //   // dd($request->all());
+    	// 	$tnx_value->rejected = 1;
+    	// 	 $tnx_value->save();
+    	// 	 return redirect()->route('admin.exchange.show');	
+    	// }else{
+    	// 	return redirect()->route('admin.exchange.show');
+    	// }
     
 
     }
