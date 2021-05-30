@@ -20,41 +20,14 @@
                         <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
                     </g>
                 </svg>
-                <span class="brand-name text-truncate">School of Engineers</span>
+                <span class="brand-name text-truncate">ewalletBD</span>
             </a>
         </div>
         <!-- begin sidebar scrollbar -->
         <div class="sidebar-scrollbar">
             <!-- sidebar menu -->
             <ul class="nav sidebar-inner" id="sidebar-menu">
-                <li>
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
-                       aria-expanded="false" aria-controls="dashboard">
-                        <i class="mdi mdi-view-dashboard-outline"></i>
-                        <span class="nav-text">Skill Development</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse @if($prefix === 'admin/skill-development') show @endif"  id="dashboard"
-                         data-parent="#sidebar-menu">
-                        <div class="sub-menu">
-                            <li class="@if($currentRouteName === 'admin.skill.index') active @endif">
-                                <a class="sidenav-item-link" href="">
-                                    <span class="nav-text">Index</span>
-                                </a>
-                            </li>
-                            <li class="@if($currentRouteName === 'admin.skill.create') active @endif">
-                                <a class="sidenav-item-link" href="">
-                                    <span class="nav-text">Add Skill</span>
-
-                                </a>
-                            </li>
-                            <li class="@if($currentRouteName === 'admin.skill.trash.index') active @endif">
-                                <a class="sidenav-item-link" href="">
-                                    <span class="nav-text">Trash</span>
-                                </a>
-                            </li>
-                        </div>
-                    </ul>
-                </li>
+                
 
                 <li>
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard1"
