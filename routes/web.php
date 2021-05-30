@@ -37,6 +37,7 @@ Route::namespace('Frontend')->group(function (){
     Route::post('tnx/convert/input','HomeController@is_convert_input')->name('tnx.convert.input')->middleware('auth:web');
     Route::get('profile','HomeController@profile_show')->name('profile.show')->middleware('auth:web');
     Route::get('profile/document','HomeController@profile_document_show')->name('profile.show.document')->middleware('auth:web');
+    Route::get('profile/transaction','HomeController@profile_transaction_show')->name('profile.show.transaction')->middleware('auth:web');
 
 });
 

@@ -348,7 +348,14 @@ class HomeController extends Controller
    public function profile_document_show(){
     $user = User::find(Auth::user()->id);
     return view('frontend.profile_document',compact('user'));
-   }   
+   } 
+
+   public function profile_transaction_show()
+   {
+    $tnxData = TnxValue::where('user_id',Auth::user()->id)->orderby('created_at','desc')->get();
+    //dd($tnxData);
+    return view('frontend.profile_transaction',compact('tnxData'));
+   }  
 
     
 

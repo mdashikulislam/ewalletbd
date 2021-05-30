@@ -38,10 +38,15 @@
 
                         </ul>
                     </div>
-
-                    <div class="col-md-12 text-center">
+                     <div class="row">
+                         <div class="col-md-6 text-center">
                      <a href="{{route('profile.show.document')}}" class="btn btn-primary">View All Document</a>
                 </div>
+                <div class="col-md-6 text-center">
+                     <a href="{{route('profile.show.transaction')}}" class="btn btn-primary">My Transactions</a>
+                </div>
+                     </div>
+                    
                 	
                 </div>
             </div>
