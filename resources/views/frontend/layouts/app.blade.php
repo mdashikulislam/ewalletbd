@@ -339,7 +339,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="partner-carousel">
-                                <div class="partner-content">
+                                <!-- <div class="partner-content">
                                     <div class="img">
                                         <img src="{{asset('frontend/img/partner8.png')}}" alt="">
                                     </div>
@@ -373,12 +373,14 @@
                                     <div class="img">
                                         <img src="{{asset('frontend/img/partner2.png')}}" alt="">
                                     </div>
-                                </div>
+                                </div> -->
+                                @foreach(App\Model\Frontend\BaseWallet::orderby('id','asc')->get() as $basewalletImage)
                                 <div class="partner-content">
                                     <div class="img">
-                                        <img src="{{asset('frontend/img/partner3.png')}}" alt="">
+                                        <img src="{{asset('storage/'.$basewalletImage->image)}}" alt="" height="400" width="220">
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="advert" style="margin-top: 30px;">
