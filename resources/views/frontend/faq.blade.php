@@ -39,13 +39,13 @@
                                 <div class="panel-heading active">
                                     <h3 class="panel-title">
                                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1">
-                                            ewallate24.com কি
+                                            ewalletbd.net কি
                                         </a>
                                     </h3>
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse in">
                                     <div class="panel-body">
-                                        <p>অনলাইনভিত্তিক ডলার ক্রয়-বিক্রয়ের বিশ্বস্ত প্লাটফর্মগুলির মধ্যে অন্যতম site ewallate24.com . যারা ফ্রীলান্সিং করে থাকেন এবং যেই ডলার উপার্জন করে থাকে তাদের ডলার গুলা BDT কনভার্ট করার কাজ করে থাকে ewallate24 </p>
+                                        <p>অনলাইনভিত্তিক ডলার ক্রয়-বিক্রয়ের বিশ্বস্ত প্লাটফর্মগুলির মধ্যে অন্যতম site ewalletbd.net . যারা ফ্রীলান্সিং করে থাকেন এবং যেই ডলার উপার্জন করে থাকে তাদের ডলার গুলা BDT কনভার্ট করার কাজ করে থাকে ewallate24 </p>
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +205,7 @@
 * Webmoney ডলার বাই সেল করতে পারবেন<br>
 * skrill অ্যাকাউন্ট এর সব ধরনের সমস্যা সমাধানে কাজ করা হয়। <br>
 * Netellerঅ্যাকাউন্ট এর সব ধরনের সমস্যা সমাধানে কাজ করা হয়। <br>
-site link- https://ewallate24.com</p>
+site link- https://ewalletbd.net</p>
                                     </div>
                                 </div>
                             </div>

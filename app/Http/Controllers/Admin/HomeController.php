@@ -222,4 +222,9 @@ class HomeController extends Controller
 
        return back();
     }
+
+    public function contact_us_show()
+    {
+      return view('admin.contact_us.show');
+    }
 }

@@ -6,8 +6,8 @@
                 <div class="col-md-9 col-sm-12 col-xs-12">
                     <div class="exchange-col" style="background: #ff4b00;margin-top: 30px;padding: 30px;border-radius:5px ">
                         <div class="notice">
-                            <p style="color: #fff;display: flex;justify-content: center;">Send = আপনি যা দিবেন Receive = আপনি যা পেতে চান (Submit পেজে Total Amount ত যে পরিমান টাকা/ডলার আসে তা পরিশোধ করতে হবে ) ১০০ এর উপর অর্ডারে প্রতি ডলারে ১ টাকা , ৩০০ উপর অর্ডারে প্রতি ডলারে ২ টাকা Discount দেওয়া হচ্ছে।অর্ডার করার পর এই Discount পাবেন ।তাই দেরি না করে এখনি অর্ডার করুন।</p>
-                            <h1 style="margin-top:30px;color: #fff;display: flex;justify-content: center;font-weight:bold;font-size: 24px;">30 USD এর কম নেটেলার, স্ক্রিল অর্ডার করল ১২০ টাকা করে প্রতি ডলার ।</h1>
+                            <p style="color: #fff;display: flex;justify-content: center;">যে কোন USD $100 এর উপরে Order করলে ডলার প্রতি ১ টাকা এবং $300 এর উপরে Order করলে ডলার প্রতি ২ টাকা Discount পাবেন।</p>
+                            <h1 style="margin-top:30px;color: #fff;display: flex;justify-content: center;font-weight:bold;font-size: 24px;">$30 USD এর কম Skrill / Neteller অর্ডার করলে অতিরিক্ত ৬০ টাকা Fee যোগ হবে</h1>
                         </div>
                         <div class="service">
                         </div>

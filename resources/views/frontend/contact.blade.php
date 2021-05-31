@@ -41,6 +41,14 @@
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
                                     </div>
+                                    
+                                </div>
+                                <div class="phone">
+                                        <label>Your Phone Number *</label>
+                                        <input name="phone" type="text" class="form-control @error('phone') is-invalid @enderror" value="{{old('phone')}}">
+                                        @error('phone')
+                                            <span class="invalid-feedback">{{$message}}</span>
+                                        @enderror
                                 </div>
                                 <div class="subject">
                                     <label>Subject *</label>

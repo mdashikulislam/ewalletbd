@@ -140,6 +140,7 @@ class HomeController extends Controller
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->subject = $request->subject;
+        $contact->phone = $request->phone;
         $contact->message = $request->message;
         $contact->save();
         return redirect()->back()->with([

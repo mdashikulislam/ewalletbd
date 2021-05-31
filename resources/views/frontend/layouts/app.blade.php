@@ -531,6 +531,9 @@
 
 </script>
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4391990874850640"
+     crossorigin="anonymous"></script>
+
 <style>
     .sc-7dvmpp-1{
         display: none!important;
