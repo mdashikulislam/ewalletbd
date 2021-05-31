@@ -15,8 +15,8 @@ class HomeController extends Controller
 {
 
     public function index(){
-
-        return view('admin.exchange.show');
+       $tnx_values = TnxValue::orderby('id','desc')->paginate(10);
+      return view('admin.exchange.show',compact('tnx_values'));
     }
 
     public function all_exchange_show()

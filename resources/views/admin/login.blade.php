@@ -43,7 +43,7 @@
                                     <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
                                 </g>
                             </svg>
-                            <span class="brand-name">School Of Engineers</span>
+                            <span class="brand-name">EwalletBD</span>
                         </a>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                                         </label>
 
                                     </div>
-                                    <p><a class="text-blue" href="#">Forgot Your Password?</a></p>
+                                    
                                 </div>
                                 <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Sign In</button>
                             </div>
@@ -88,7 +88,7 @@
         </div>
     </div>
     <div class="copyright pl-0">
-        <p class="text-center">&copy; {{\Carbon\Carbon::now()->year}} School of Engineers all right reserved.</p>
+        <p class="text-center">&copy; {{\Carbon\Carbon::now()->year}} EwalletBD all right reserved.</p>
     </div>
 </div>
 </body>
