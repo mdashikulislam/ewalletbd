@@ -25,7 +25,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach(App\Model\Frontend\ContactUs::orderby('id','asc')->get() as $contact_info)
+                                    
+                                    @foreach($contacts as $contact_info)
                                 <tr>
                                     
                                     <td>
@@ -50,7 +51,7 @@
                                 </tbody>
                             </table>
                         </div>
-
+                      {{$contacts->links()}}
                 </div>
             </div>
             

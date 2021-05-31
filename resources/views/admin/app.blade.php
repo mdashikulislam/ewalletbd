@@ -141,17 +141,13 @@
             <div class="content">
                 @section('main-content')
                 @show
+
             </div>
         </div>
-        <footer class="footer mt-auto">
-            <div class="copyright bg-white">
-                <p>
-                    &copy;<span id="copy-year">{{\Carbon\Carbon::now()->year}}</span> Copyright School of Engineers.
-                </p>
-            </div>
-
-        </footer>
+     
+   
     </div>
+
     @include('sweetalert::alert')
 </div>
 <script src="{{asset('backend/assets/plugins/jquery/jquery.min.js')}}"></script>

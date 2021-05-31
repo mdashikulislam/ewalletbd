@@ -10,10 +10,10 @@
             <div class="row">
                 <div class="col-md-12">
                     
-           <div class="table-wrapper-scroll-y my-custom-scrollbar" style="margin-top: 20px;">
-                            <table class="table table-bordered table-hover">
+           <div class="card-body">
+            <div class="hoverable-data-table">
+                <table  class="table table-hover nowrap" style="width:100%">
                     <thead>
-                                <thead>
                                 <tr>
                                     <th>Username</th>
                                     <th>Send</th>
@@ -26,7 +26,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach(App\Model\Frontend\TnxValue::orderby('id','desc')->get() as $tnx_value)
+                                    @foreach($tnx_values as $tnx_value)
                                 <tr>
                                     <td>{{App\Http\Helpers\Helper::getUserName($tnx_value->user_id)}}</td>
                                     <td>
@@ -56,6 +56,8 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        {{$tnx_values->links()}}
 
                 </div>
             </div>

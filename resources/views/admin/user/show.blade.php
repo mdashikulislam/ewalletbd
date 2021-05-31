@@ -23,7 +23,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach(App\User::orderby('id','desc')->get() as $key => $user)
+                                    @foreach($users as $key => $user)
                                 <tr>
                                 	<td>
                                 		{{$key +1 }}
@@ -54,6 +54,8 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        {{$users->links()}}
 
                 </div>
             </div>

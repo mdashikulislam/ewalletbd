@@ -15,12 +15,14 @@ class HomeController extends Controller
 {
 
     public function index(){
+
         return view('admin.exchange.show');
     }
 
     public function all_exchange_show()
     {
-    	return view('admin.exchange.show');
+      $tnx_values = TnxValue::orderby('id','desc')->paginate(10);
+    	return view('admin.exchange.show',compact('tnx_values'));
     }
 
     public function all_exchange_change($id)
@@ -153,7 +155,8 @@ class HomeController extends Controller
 
     public function user_show()
     {
-       return view('admin.user.show');
+      $users = \App\User::orderby('id','desc')->paginate(10);
+       return view('admin.user.show',compact('users'));
     }
 
     public function user_edit($id)
@@ -225,6 +228,7 @@ class HomeController extends Controller
 
     public function contact_us_show()
     {
-      return view('admin.contact_us.show');
+      $contacts = \App\Model\Frontend\ContactUs::orderby('id','asc')->paginate(10);
+      return view('admin.contact_us.show',compact('contacts'));
     }
 }
