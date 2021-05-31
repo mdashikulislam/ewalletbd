@@ -108,22 +108,7 @@
                                         {{auth()->user()->name}} <small class="pt-1">{{auth()->user()->email}}</small>
                                     </div>
                                 </li>
-                                <li>
-                                    <a href="user-profile.html">
-                                        <i class="mdi mdi-account"></i> My Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="mdi mdi-email"></i> Message
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
-                                </li>
-                                <li class="right-sidebar-in">
-                                    <a href="javascript:0"> <i class="mdi mdi-settings"></i> Setting </a>
-                                </li>
+                               
 
                                 <li class="dropdown-footer">
                                     <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{route('admin.logout')}}"> <i class="mdi mdi-logout"></i> Log Out </a>
@@ -145,7 +130,7 @@
             </div>
         </div>
      
-   
+
     </div>
 
     @include('sweetalert::alert')
