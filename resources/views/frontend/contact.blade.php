@@ -86,8 +86,7 @@
                                         <i class="fa fa-phone"></i>
                                     </div>
                                     <div class="text">
-                                        <p>(+064)-342-68382</p>
-                                        <p>(+064)-342-68383</p>
+                                        <p>01712-888244</p>
                                     </div>
                                 </div>
                                 <div class="email">
@@ -95,7 +94,7 @@
                                         <i class="fa fa-envelope-o"></i>
                                     </div>
                                     <div class="text">
-                                        <a href="mailto:info@example.com">info@example.com</a>
+                                        <a href="mailto:ewalletebd@gmail.com">ewalletebd@gmail.com</a>
                                     </div>
                                 </div>
                             </div>
