@@ -3,9 +3,7 @@
 <div class="card card-default">
         <div class="card-header card-header-border-bottom d-flex justify-content-between">
             <h2>All Exchange Data Show</h2>
-            <a href="" class="btn btn-outline-primary btn-sm text-uppercase">
-                <i class="fa fa-plus"></i> Add Currency Rate
-            </a>
+            
         </div>
     </div>
         <div class="container">
@@ -24,7 +22,7 @@
                                     <th>Date</th>
                                     <th>Time</th>
                                     <th>Status</th>
-                                    <th>Status</th>
+                                    <th >Status</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -32,8 +30,6 @@
                                 <tr>
                                     <td>{{App\Http\Helpers\Helper::getUserName($tnx_value->user_id)}}</td>
                                     <td>
-                                        <!-- <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt=""> -->
-
                                         {{App\Http\Helpers\Helper::getWalletNameById($tnx_value->send_you_base_wallets_id)}}
                                     </td>
                                     <td>
@@ -52,7 +48,7 @@
                                     <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ff0000;color: #fff;">Rejected</span></td>
                                     @endif
 
-                                    <td><a href="{{route('change.status.exchange',$tnx_value->id)}}" ><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #0000FF;color: #fff;">Change Status</span></a></td>
+                                    <td><a href="{{route('change.status.exchange',$tnx_value->id)}}" class="btn-sm btn-primary">Change Status</a></td>
                                     
                                 </tr>
                                 @endforeach

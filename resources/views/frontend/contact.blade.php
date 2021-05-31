@@ -116,13 +116,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="advert" style="margin-top: 30px;">
-                        <img style="height: auto;width: 100%" src="{{asset('frontend/img/970x90.jpg')}}" alt="">
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 @endsection

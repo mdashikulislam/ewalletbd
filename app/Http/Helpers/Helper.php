@@ -99,7 +99,7 @@ class Helper {
 
     public static function getUserName($id){
         $data = User::where('id',$id)->first();
-        $name = $data->first_name .' '. $data->last_name;
+        $name = $data->first_name;
 
         return $name;
     }

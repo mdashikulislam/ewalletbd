@@ -253,7 +253,7 @@ class HomeController extends Controller
                 $charge = 0;
             }
 
-            if (($to->id == 6 || $to->id == 7) && $toValue < 30.00){
+            if (($to->id == 6 || $to->id == 7 || $to->id == 13 || $to->id == 14) && $toValue < 30.00){
                 
                 $fee = 60;
                 $net = $formValue;

@@ -18,7 +18,7 @@
                                     <div class="col-md-6">
                                         <div class="send-logo">
                                             <div class="img">
-                                                <img src="{{asset('frontend/img/bkash.png')}}" alt="">
+                                                <img src="" alt="" id="form_image">
                                             </div>
                                             <h1><i class="fa fa-arrow-down"></i>You send</h1>
                                         </div>
@@ -35,7 +35,7 @@
                                     <div class="col-md-6">
                                         <div class="send-logo">
                                             <div class="img">
-                                                <img src="{{asset('frontend/img/bkash.png')}}" alt="">
+                                                <img src="" alt="" id="to_image">
                                             </div>
                                             <h1><i class="fa fa-arrow-up"></i>You Receive</h1>
                                         </div>
@@ -116,253 +116,7 @@
                                     
                                 </tr>
                                 @endforeach
-                               <!--  <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ffc107;color: #fff;"><i class="fa fa-clock-o fa-fw"></i>Process</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ff0000;color: #fff;"><i class="fa fa-times fa-fw"></i>Rejected</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #28a745;color: #fff;"><i class="fa fa-check fa-fw"></i>Success</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ffc107;color: #fff;"><i class="fa fa-clock-o fa-fw"></i>Process</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ff0000;color: #fff;"><i class="fa fa-times fa-fw"></i>Rejected</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #28a745;color: #fff;"><i class="fa fa-check fa-fw"></i>Success</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ffc107;color: #fff;"><i class="fa fa-clock-o fa-fw"></i>Process</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ff0000;color: #fff;"><i class="fa fa-times fa-fw"></i>Rejected</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #28a745;color: #fff;"><i class="fa fa-check fa-fw"></i>Success</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ffc107;color: #fff;"><i class="fa fa-clock-o fa-fw"></i>Process</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ff0000;color: #fff;"><i class="fa fa-times fa-fw"></i>Rejected</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #28a745;color: #fff;"><i class="fa fa-check fa-fw"></i>Success</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ffc107;color: #fff;"><i class="fa fa-clock-o fa-fw"></i>Process</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ff0000;color: #fff;"><i class="fa fa-times fa-fw"></i>Rejected</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #28a745;color: #fff;"><i class="fa fa-check fa-fw"></i>Success</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ffc107;color: #fff;"><i class="fa fa-clock-o fa-fw"></i>Process</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ff0000;color: #fff;"><i class="fa fa-times fa-fw"></i>Rejected</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #28a745;color: #fff;"><i class="fa fa-check fa-fw"></i>Success</span></td>
-                                </tr>
-                                <tr>
-                                    <td>ashik</td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>
-                                        <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt="">
-                                    </td>
-                                    <td>100 USD</td>
-                                    <td>11 Dec 2018</td>
-                                    <td>11:25 AM</td>
-                                    <td><span  style="font-size: 14px;padding: 4px 8px;border-radius: 4px;background: #ffc107;color: #fff;"><i class="fa fa-clock-o fa-fw"></i>Process</span></td>
-                                </tr> -->
+                  
                                 </tbody>
                             </table>
                         </div>
@@ -462,11 +216,7 @@
                 var toCurrencyID = toSelector.val();
                 var fromCurrencyValue = $('#from_value').val();
 
-                // if (parseInt(fromCurrencyID) === parseInt(toCurrencyID)){
-                //     $('#submit_btn').parent('div').hide();
-                // }else{
-                //     $('#submit_btn').parent('div').show();
-                // }
+                
                 currencyConvert(fromCurrencyID,toCurrencyID,fromCurrencyValue);
             })
         });
@@ -484,13 +234,7 @@
         });
          function currencyData(fromSelector, toSelector){
             console.log(fromSelector + ' - '+toSelector)
-            // $.ajax({
-            //     url:`/currency/info/${fromSelector}/${toSelector}`,
-            //     method:'GET',
-            //     success:function (response){
-            //         console.log(response);
-            //     }
-            // });
+        
         }
 
          function currencyDropdownChange(fromCurrencyID){
@@ -512,6 +256,8 @@
                     $('#exchange_text').text(response.exchange);
                     $('#to_value').val(response.rate);
                     $('#reserve_value').text(response.reserve);
+                    $('#form_image').attr('src','/storage/'+response.from_image);
+                    $('#to_image').attr('src','/storage/'+response.to_image);
                     if (response.is_convert == 1){
                         $('#submit_btn').parent('div').show();
                     }else{

@@ -2,7 +2,7 @@
 @section('main-content')
 <div class="card card-default">
         <div class="card-header card-header-border-bottom d-flex justify-content-between">
-            <h2>Notice Data Show</h2>
+            <h2>User Data Show</h2>
         </div>
     </div>
         <div class="container">

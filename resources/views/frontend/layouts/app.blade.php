@@ -288,7 +288,7 @@
                         <div class="nav-bar">
                             <ul class="sf-menu">
                                 <li class="current-menu-item"><a href="{{route('user.home')}}">Home</a></li>
-                                <li><a href="{{route('user.history')}}">History</a></li>
+                                <!-- <li><a href="{{route('user.history')}}">History</a></li> -->
                                 <li><a href="{{route('user.about')}}">About</a></li>
                                 <li><a href="{{route('user.faq')}}">FAQ</a></li>
                                 <li><a href="{{route('user.contact')}}">Contact</a></li>
@@ -377,7 +377,7 @@
                                 @foreach(App\Model\Frontend\BaseWallet::orderby('id','asc')->get() as $basewalletImage)
                                 <div class="partner-content">
                                     <div class="img">
-                                        <img src="{{asset('storage/'.$basewalletImage->image)}}" alt="" height="400" width="220">
+                                        <img src="{{asset('storage/'.$basewalletImage->image)}}" alt="" style="max-height: 120px;">
                                     </div>
                                 </div>
                                 @endforeach

@@ -2,7 +2,7 @@
 @section('main-content')
 <div class="card card-default">
         <div class="card-header card-header-border-bottom d-flex justify-content-between">
-            <h2>All Exchange Data Show</h2>
+            <h2>All Reserve Data Show</h2>
             <!-- <a href="" class="btn btn-outline-primary btn-sm text-uppercase">
                 <i class="fa fa-plus"></i> Add Event/Campaign
             </a> -->
