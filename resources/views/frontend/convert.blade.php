@@ -53,7 +53,7 @@
 
 
               ?>
-             
+             @if(Auth::user()->is_info_verified == 'verified')
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="convert">
@@ -90,7 +90,9 @@
                         </form>
                     </div>
                 </div>
-                
+             @else
+              <h4 style="text-align: center;">Your Account is Unverified Please Contact Admin For Transaction</h4>
+             @endif  
             </div>
         </div>
     </div>

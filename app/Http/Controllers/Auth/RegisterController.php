@@ -77,7 +77,7 @@ class RegisterController extends Controller
             'dob' => $data['dob'],
             'email' => $data['email'],
             'phone' => $data['phone'],
-            'is_info_verified' => 'verified',
+            'is_info_verified' => 'unverified',
             'password' => Hash::make($data['password']),
         ]);
     }

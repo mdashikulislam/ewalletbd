@@ -82,6 +82,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('user/edit/{id}', 'HomeController@user_edit')->name('user.edit')->middleware('auth:admin');
     Route::post('update/user/{id}', 'HomeController@user_update')->name('user.update')->middleware('auth:admin');
 
+    Route::get('user/document/show/{id}', 'HomeController@user_document')->name('admin.view.document')->middleware('auth:admin');
+
     Route::get('contact/us/all', 'HomeController@contact_us_show')->name('contact.us.show')->middleware('auth:admin');
 
 

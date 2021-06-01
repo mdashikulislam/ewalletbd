@@ -29,7 +29,7 @@
                                @if($profile->is_info_verified == 'verified')
                                       <button class="btn btn-success btn-sm">Active</button>  
                                         @else
-                                        <button class="btn btn-danger btn-sm">InActive<</button>
+                                        <button class="btn btn-danger btn-sm">InActive</button>
                                         @endif
 
 
@@ -42,9 +42,11 @@
                          <div class="col-md-6 text-center">
                      <a href="{{route('profile.show.document')}}" class="btn btn-primary">View All Document</a>
                 </div>
+                @if(Auth::user()->is_info_verified == 'verified')
                 <div class="col-md-6 text-center">
                      <a href="{{route('profile.show.transaction')}}" class="btn btn-primary">My Transactions</a>
                 </div>
+                @endif 
                      </div>
                     
                 	

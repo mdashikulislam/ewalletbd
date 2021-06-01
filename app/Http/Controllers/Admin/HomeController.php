@@ -231,4 +231,10 @@ class HomeController extends Controller
       $contacts = \App\Model\Frontend\ContactUs::orderby('id','asc')->paginate(10);
       return view('admin.contact_us.show',compact('contacts'));
     }
+
+    public function user_document($id)
+    {
+      $user = User::find($id);
+      return view('admin.user.profile_document',compact('user'));
+    }
 }

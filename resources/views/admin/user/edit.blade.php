@@ -3,8 +3,8 @@
     <div class="card card-default">
         <div class="card-header card-header-border-bottom d-flex justify-content-between">
             <h2>Add Event/Campaign</h2>
-            <a href="" class="btn btn-outline-primary btn-sm text-uppercase">
-                <i class="fa fa-list"></i> Event/Campaign List
+            <a href="{{route('admin.view.document',$user->id)}}" class="btn btn-outline-primary btn-sm text-uppercase">
+                <i class="fa fa-list"></i> View Document
             </a>
         </div>
         <div class="card-body">
