@@ -260,7 +260,6 @@ class HomeController extends Controller
        $admin = Admin::find($id);
 
        $admin->name = $request->name;
-       $admin->email = $request->email;
        $admin->password = Hash::make($request->password);
 
       $admin->save();

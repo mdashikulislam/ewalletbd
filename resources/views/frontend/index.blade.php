@@ -92,7 +92,7 @@
                                 <tbody>
                                     @foreach(App\Model\Frontend\TnxValue::orderby('id','desc')->get() as $tnx_value)
                                 <tr>
-                                    <td>{{App\Http\Helpers\Helper::getUserName($tnx_value->user_id)}}</td>
+                                    <td>{{App\Http\Helpers\Helper::getUserName(@$tnx_value->user_id)}}</td>
                                     <td>
                                         <!-- <img style="width: 40px;height: 40px;" src="{{asset('frontend/img/skrill.png')}}" alt=""> -->
 
