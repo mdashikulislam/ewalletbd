@@ -76,9 +76,15 @@ class HomeController extends Controller
          
        ->send(new WelcomeMail($details));
 
-     return redirect()->route('user.home');
+     return redirect()->route('user.success',$tnxvalue->id);
    
 
+    }
+
+    public function success($id)
+    {
+        $tnx_value = TnxValue::find($id);
+        return view('frontend.success',compact('tnx_value'));
     }
 
     public function index()

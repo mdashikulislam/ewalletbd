@@ -105,12 +105,12 @@
                                   <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse5">
                                             ewallate24 এর সার্ভিস টাইম ?
                                         </a>
                                     </h3>
                                 </div>
-                                <div id="collapse4" class="panel-collapse collapse">
+                                <div id="collapse5" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <p>আমরা সাধারণত সকাল ৯ টা থেকে রাত ১২ টা পর্যান্ত সার্ভিস দিয়ে থাকি । কিন্তু যদি কারোর সার্ভিস টাইমের আগে বা পরে লেনদেন খুব গুরুত্ব পূর্ণ হয়ে থাকে তা হলে আমাদের whats app  এ যোগাযোগ করতে পারেন। </p>
                                     </div>
@@ -120,12 +120,12 @@
                                   <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse6">
                                            ewallate24 এর ফেসবুক পেজ আছে কি ?
                                         </a>
                                     </h3>
                                 </div>
-                                <div id="collapse4" class="panel-collapse collapse">
+                                <div id="collapse6" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <p>জি আমাদের ফেসবুক পেজ আছে Click here</p>
                                     </div>
@@ -135,12 +135,12 @@
                                   <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse7">
                                             কিভাবে রেজিস্টিশন করব ?
                                         </a>
                                     </h3>
                                 </div>
-                                <div id="collapse4" class="panel-collapse collapse">
+                                <div id="collapse7" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <p>youtube video click here
 
@@ -153,12 +153,12 @@
                                   <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse8">
                                             কিভাবে ভেরিফাই করব ?
                                         </a>
                                     </h3>
                                 </div>
-                                <div id="collapse4" class="panel-collapse collapse">
+                                <div id="collapse8" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <p>youtube video click here
 
@@ -173,12 +173,12 @@
                                   <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse9">
                                             সর্বনিম্ন কত ডলার ট্রানজেকশন করা যাবে ?
                                         </a>
                                     </h3>
                                 </div>
-                                <div id="collapse4" class="panel-collapse collapse">
+                                <div id="collapse9" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <p>1.Skrill সর্বনিম্ন বাই / সেল করতে পারবেন ১০ ডলার ।<br>
 2.Neteller সর্বনিম্ন বাই / সেল করতে পারবেন ১০ ডলার ।<br>
@@ -192,12 +192,12 @@
                                   <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse10">
                                             আপনারা কি কি সার্ভিস দিয়ে থাকেন ?
                                         </a>
                                     </h3>
                                 </div>
-                                <div id="collapse4" class="panel-collapse collapse">
+                                <div id="collapse10" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <p> * skrill ডলার বাই সেল করতে পারবেন।<br>
 * Neteller ডলার বাই সেল করতে পারবেন।<br>
@@ -214,12 +214,12 @@ site link- https://ewalletbd.net</p>
                                   <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse11">
                                             কিভাবে অ্যাকাউন্ট ,করবো ভেরিফাই করব, এক্সচেঞ্জ করবো ?
                                         </a>
                                     </h3>
                                 </div>
-                                <div id="collapse4" class="panel-collapse collapse">
+                                <div id="collapse11" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <p>নিচের ভিডিও টা দেখলে এই সব বিষয় গুলা পরিষ্কার হয়ে যাবে ।দয়া করে সমায় নিয়ে ভিদেওটা দেখুন।
 
@@ -231,12 +231,12 @@ https://www.youtube.com/watch?v=ZPRPnne7so4&t=121s</p>
                                   <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse12">
                                             আগের থেকে বেশি সমায় কেন লাগে লেনদেন করতে।
                                         </a>
                                     </h3>
                                 </div>
-                                <div id="collapse4" class="panel-collapse collapse">
+                                <div id="collapse12" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <p>প্রিয়, ewallate24 এর গ্রাহক সম্মানের সাথে জানাচ্ছি বাংলাদেশে নেটেলার এবং স্ক্রিল সার্ভিস টি খারাপ হয়ে যাওয়াতে আমরা আপনাদের জন্য ডলার জমা রাখতে পারছি না। এখন বেশির ভাগ লেনদেন আমরা গ্রাহক থেকে গ্রাহক করে থাকি তাই আগের সমায়ের থেকে এখন একটু সমায় লাগে তবে চেষ্টা থাকে কম সমায়ে লেনদেন সম্পুন্ন করার। </p>
                                     </div>

@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Helpers\Helper;
 use App\Model\Frontend\TnxValue;
 use App\Model\Frontend\BaseWallet;
 use App\Model\Frontend\CurrencyRate;
 use App\Notice;
 use App\User;
+use App\Model\Admin\Admin;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -237,4 +241,31 @@ class HomeController extends Controller
       $user = User::find($id);
       return view('admin.user.profile_document',compact('user'));
     }
+
+    public function user_setting()
+    {
+      $user = Admin::find(Auth::user()->id);
+
+      return view('admin.setting',compact('user'));
+    }
+
+    public function user_setting_update(Request $request,$id)
+    {
+
+       $request->validate
+        ([
+            
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+       $admin = Admin::find($id);
+
+       $admin->name = $request->name;
+       $admin->email = $request->email;
+       $admin->password = Hash::make($request->password);
+
+      $admin->save();
+      return back();
+
+    }
+
 }

@@ -38,6 +38,7 @@ Route::namespace('Frontend')->group(function (){
     Route::get('profile','HomeController@profile_show')->name('profile.show')->middleware('auth:web');
     Route::get('profile/document','HomeController@profile_document_show')->name('profile.show.document')->middleware('auth:web');
     Route::get('profile/transaction','HomeController@profile_transaction_show')->name('profile.show.transaction')->middleware('auth:web');
+    Route::get('success/{id}','HomeController@success')->name('user.success')->middleware('auth:web');
 
 });
 
@@ -83,6 +84,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('update/user/{id}', 'HomeController@user_update')->name('user.update')->middleware('auth:admin');
 
     Route::get('user/document/show/{id}', 'HomeController@user_document')->name('admin.view.document')->middleware('auth:admin');
+    Route::get('setting', 'HomeController@user_setting')->name('admin.setting')->middleware('auth:admin');
+    Route::post('setting/update/{id}', 'HomeController@user_setting_update')->name('admin.setting.update')->middleware('auth:admin');
 
     Route::get('contact/us/all', 'HomeController@contact_us_show')->name('contact.us.show')->middleware('auth:admin');
 

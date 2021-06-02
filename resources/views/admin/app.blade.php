@@ -108,6 +108,10 @@
                                         {{auth()->user()->name}} <small class="pt-1">{{auth()->user()->email}}</small>
                                     </div>
                                 </li>
+                                <li class="dropdown-footer">
+                                    <a  href="{{route('admin.setting')}}"> <i class="mdi mdi-logout"></i> Setting </a>
+                                    
+                                </li>
                                
 
                                 <li class="dropdown-footer">
